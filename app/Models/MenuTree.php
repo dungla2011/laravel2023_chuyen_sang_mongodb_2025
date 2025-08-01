@@ -366,4 +366,24 @@ class MenuTree extends ModelGlxBase
             echo "</ul>\n";
         }
     }
+    /**
+     * Define MongoDB field types
+     * Auto-generated from SQL structure
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'parent_id' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'orders' => 'int',
+        'link' => 'string',
+        'gid_allow' => 'string',
+        'open_new_window' => 'int',
+        'icon' => 'string',
+        'id_news' => 'int',
+    ];
+
 }

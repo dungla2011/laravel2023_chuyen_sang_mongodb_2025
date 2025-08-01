@@ -29,4 +29,25 @@ class HrSessionType extends ModelGlxBase
     {
         return $this->getValidateRuleInsert();
     }
+    /**
+     * Define MongoDB field types
+     * Auto-generated from SQL structure
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'desc' => 'string',
+        'hour' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'log' => 'string',
+        'orders' => 'int',
+        'num1' => 'double',
+        'num2' => 'double',
+        'num3' => 'double',
+        'num4' => 'double',
+    ];
+
 }
