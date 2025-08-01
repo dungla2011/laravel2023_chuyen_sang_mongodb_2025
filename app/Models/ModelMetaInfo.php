@@ -70,8 +70,8 @@ class ModelMetaInfo extends ModelGlxBase
 //            die("1122333 - " . SiteMng::isUseOwnMetaTable());
 //        }
 
-        if(!SiteMng::isUseOwnMetaTable())
-            $this->setConnection('mysql_for_common');
+        // if(!SiteMng::isUseOwnMetaTable())
+        //     $this->setConnection('mysql_for_common');
         parent::__construct($attributes);
     }
 

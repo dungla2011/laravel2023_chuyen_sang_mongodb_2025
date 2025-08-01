@@ -67,7 +67,7 @@ class clsParamRequestEx
             $this->need_set_uid = 0;
         }
 
-        if (str_starts_with($request->route()->uri(), 'api/')) {
+        if ($request && $request->route() && str_starts_with($request->route()->uri(), 'api/')) {
             $this->is_api = 1;
         }
     }

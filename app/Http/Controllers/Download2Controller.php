@@ -1,11 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-function str_replace_first($search, $replace, $subject)
-{
-    $search = '/'.preg_quote($search, '/').'/';
-    return preg_replace($search, $replace, $subject, 1);
-}
 
 use App\Http\ControllerApi\Api4sV1Controller;
 
