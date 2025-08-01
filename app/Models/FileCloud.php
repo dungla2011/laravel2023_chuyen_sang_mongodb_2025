@@ -25,6 +25,31 @@ class FileCloud extends ModelGlxBase implements TreeInterface
 
     protected $guarded = [];
 
+    /**
+     * Define MongoDB field types
+     * Auto-generated from SQL structure
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'size' => 'int',
+        'file_path' => 'string',
+        'md5' => 'string',
+        'user_id' => 'int',
+        'crc32' => 'string',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'created_at' => 'date',
+        'location' => 'string',
+        'mime' => 'string',
+        'server1' => 'string',
+        'location1' => 'string',
+        'checksum' => 'string',
+        'log' => 'string',
+        'last_save_doc' => 'date',
+    ];
+
     public function getParentClass(){
         return FolderFile::class;
     }

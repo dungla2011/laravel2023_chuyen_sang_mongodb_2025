@@ -13,6 +13,31 @@ class MyDocument extends ModelGlxBase
 
     protected $guarded = [];
 
+    /**
+     * Define MongoDB field types
+     * Auto-generated from SQL structure
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'summary' => 'string',
+        'content' => 'string',
+        'refer' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'parent_id' => 'int',
+        'parent_list' => 'string',
+        'file_list' => 'string',
+        'parent_extra' => 'string',
+        'parent_all' => 'string',
+    ];
+
     static function getElasticDbName()
     {
         return "db_tai_lieu_chuan";

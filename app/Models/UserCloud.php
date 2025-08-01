@@ -17,6 +17,30 @@ class UserCloud extends ModelGlxBase
     protected $guarded = [];
 
     /**
+     * Define MongoDB field types
+     * Auto-generated from SQL structure
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'user_id' => 'int',
+        'quota_size' => 'int',
+        'quota_file' => 'int',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'created_at' => 'date',
+        'location_store_file' => 'string',
+        'glx_bytes_in_used' => 'int',
+        'glx_files_in_used' => 'int',
+        'quota_daily_download' => 'int',
+        'quota_limit_data' => 'int',
+        'glx_download_his' => 'string',
+        'glx_shell' => 'string',
+        'glx_uid' => 'int',
+        'glx_gid' => 'int',
+    ];
+
+    /**
      * @param  $field
      * @return MetaOfTableInDb
      */

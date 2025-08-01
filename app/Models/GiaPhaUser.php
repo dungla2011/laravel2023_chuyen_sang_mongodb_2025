@@ -14,6 +14,22 @@ class GiaPhaUser extends ModelGlxBase
 
     protected $guarded = [];
 
+    /**
+     * Define MongoDB field types
+     * Auto-generated from SQL structure
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'user_id' => 'int',
+        'created_at' => 'date',
+        'deleted_at' => 'date',
+        'updated_at' => 'date',
+        'max_quota_node' => 'int',
+        'parent_id' => 'int',
+        'version_using' => 'int',
+    ];
+
     public static function createQuotaUser($uid)
     {
         $gpUser = GiaPhaUser::where('user_id', $uid)->first();

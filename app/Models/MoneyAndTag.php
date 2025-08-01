@@ -13,6 +13,20 @@ class MoneyAndTag extends ModelGlxBase
 
     protected $guarded = [];
 
+    /**
+     * Define MongoDB field types
+     * Auto-generated from SQL structure
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'money_id' => 'int',
+        'tag_id' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+    ];
+
     // Các hàm Set, Get riêng của Model laravel
     //    public function setNumber1Attribute($number1){
     //        $this->attributes['number1'] = $number1 * 2;

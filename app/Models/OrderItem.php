@@ -12,6 +12,32 @@ class OrderItem extends ModelGlxBase
 
     protected $guarded = [];
 
+    /**
+     * Define MongoDB field types
+     * Auto-generated from SQL structure
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'user_id' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'order_id' => 'int',
+        'sku_id' => 'int',
+        'sku_string' => 'string',
+        'product_id' => 'int',
+        'price' => 'int',
+        'price_org' => 'int',
+        'quantity' => 'int',
+        'client_session_time' => 'string',
+        'end_time' => 'date',
+        'param1' => 'int',
+        'used' => 'int',
+        'log' => 'string',
+        'note' => 'string',
+    ];
+
     /*
      * Ví dụ khi bill chưa có param1, thì cập nhật từ product
      * hoặc cập nhật từ SKU của product

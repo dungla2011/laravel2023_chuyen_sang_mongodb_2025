@@ -12,6 +12,60 @@ class MyTreeInfo extends ModelGlxBase
 
     protected $guarded = [];
 
+    /**
+     * Define MongoDB field types
+     * Auto-generated from SQL structure
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'id__' => 'string',
+        'name' => 'string',
+        'title' => 'string',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'user_id' => 'int',
+        'tree_id' => 'int',
+        'status' => 'int',
+        'image_list' => 'string',
+        'color_name' => 'string',
+        'color_title' => 'string',
+        'fontsize_name' => 'int',
+        'fontsize_title' => 'int',
+        'banner_name_margin_top' => 'int',
+        'banner_name_margin_bottom' => 'int',
+        'banner_title_margin_top' => 'int',
+        'banner_title_margin_bottom' => 'int',
+        'member_background_img' => 'string',
+        'member_background_img2' => 'string',
+        'banner_width' => 'int',
+        'banner_height' => 'int',
+        'banner_name_bold' => 'string',
+        'banner_name_italic' => 'string',
+        'banner_title_bold' => 'string',
+        'banner_title_italic' => 'string',
+        'banner_title_curver' => 'int',
+        'banner_name_curver' => 'int',
+        'banner_text_shadow_name' => 'string',
+        'banner_text_shadow_title' => 'string',
+        'banner_margin_top' => 'int',
+        'title_before_or_after_name' => 'int',
+        'tree_nodes_xy' => 'string',
+        'minX' => 'int',
+        'minY' => 'int',
+        'show_node_name_one' => 'int',
+        'show_node_title' => 'int',
+        'show_node_birthday_one' => 'int',
+        'show_node_date_of_death' => 'int',
+        'show_node_image' => 'int',
+        'node_width' => 'int',
+        'node_height' => 'int',
+        'space_node_x' => 'int',
+        'space_node_y' => 'int',
+        'font_size_node' => 'int',
+    ];
+
 
     function getNodeWidth()
     {

@@ -12,6 +12,30 @@ class HrSampleTimeEvent extends ModelGlxBase
 
     protected $guarded = [];
 
+    /**
+     * Define MongoDB field types
+     * Auto-generated from SQL structure
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'time_frame' => 'string',
+        'cat1' => 'int',
+        'cat2' => 'int',
+        'num1' => 'double',
+        'num2' => 'double',
+        'num3' => 'double',
+        'num4' => 'double',
+    ];
+
     public static $hrAllUserTimeSheet; //[userid][month] => []
 
     //Month: '2023-01', '2022-10' ...

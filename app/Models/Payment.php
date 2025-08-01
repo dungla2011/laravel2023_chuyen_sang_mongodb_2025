@@ -12,4 +12,23 @@ class Payment extends ModelGlxBase
     use HasFactory, SoftDeletes, TraitModelExtra;
     protected $guarded = [];
 
+    /**
+     * Define MongoDB field types
+     * Auto-generated from SQL structure
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'order_id' => 'int',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'payment_method' => 'string',
+        'transaction_id' => 'string',
+    ];
+
 }

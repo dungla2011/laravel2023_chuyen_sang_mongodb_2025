@@ -23,6 +23,28 @@ class TmpDownloadSession extends ModelGlxBase
 {
     use HasFactory, TraitModelExtra;
     protected $guarded = [];
+
+    /**
+     * Define MongoDB field types
+     * Auto-generated from SQL structure
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'user_id' => 'int',
+        'token' => 'string',
+        'fid' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'done_bytes' => 'int',
+        'ip_address' => 'string',
+        'ip_download_list' => 'string',
+        'file_size' => 'int',
+        'deleted_at' => 'date',
+        'time_begin_update_byte' => 'date',
+        'time_end_update_byte' => 'date',
+        'logs' => 'string',
+    ];
     public static function deleteDoneSession($fid, $uid, $tokenEnc)
     {
 //        dump("Delete...");

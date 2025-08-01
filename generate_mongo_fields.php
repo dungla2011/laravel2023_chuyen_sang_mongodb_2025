@@ -5,7 +5,7 @@
  */
 
 // Đọc file SQL
-$sqlFile = __DIR__ . '/database/glx2023_struct.sql';
+$sqlFile = __DIR__ . '/database/glx2023_struct_full.sql';
 $sqlContent = file_get_contents($sqlFile);
 
 // Parse SQL để tìm các table và fields
@@ -80,69 +80,203 @@ function camelCase($string) {
 }
 
 function singularize($word) {
-    // Simple singularization rules
-    $rules = [
-        's$' => '',
-        'ies$' => 'y',
-        'ves$' => 'f',
-        'logs$' => 'log',
+    // Skip already singular words
+    $alreadySingular = [
+        'media', 'data', 'info', 'log', 'meta', 'todo', 'demo', 'crm', 'hr', 'ocr',
+        'quiz', 'typing', 'giapha', 'telesale', 'monitor', 'order', 'partner', 
+        'payment', 'transport', 'uploader', 'site', 'sku'
+    ];
+    
+    $lowerWord = strtolower($word);
+    if (in_array($lowerWord, $alreadySingular)) {
+        return $word;
+    }
+    
+    // Specific rules first (most specific to least specific)
+    $specificRules = [
+        'access$' => 'access',
+        'trees$' => 'tree',
+        'employees$' => 'employee',  
+        'certificates$' => 'certificate',
+        'expenses$' => 'expense',
+        'tokens$' => 'token',
+        'responses$' => 'response',
+        'enterprises$' => 'enterprise',
+        'purchases$' => 'purchase',
+        'licenses$' => 'license',
+        'practices$' => 'practice',
+        'devices$' => 'device',
+        'invoices$' => 'invoice',
+        'provinces$' => 'province',
+        'images$' => 'image',
+        'usages$' => 'usage',
+        'advantages$' => 'advantage',
+        'damages$' => 'damage',
+        'packages$' => 'package',
+        'messages$' => 'message',
+        'passages$' => 'passage',
+        'presences$' => 'presence',
+        'references$' => 'reference',
+        'differences$' => 'difference',
+        'preferences$' => 'preference',
+        'performances$' => 'performance',
+        'instances$' => 'instance',
+        'distances$' => 'distance',
+        'sentences$' => 'sentence',
+        'offenses$' => 'offense',
+        'defenses$' => 'defense',
+        'interfaces$' => 'interface',
+        'surfaces$' => 'surface',
+        'purposes$' => 'purpose',
+        'promises$' => 'promise',
+        'courses$' => 'course',
+        'sources$' => 'source',
+        'resources$' => 'resource',
+        'forces$' => 'force',
+        'horses$' => 'horse',
+        'houses$' => 'house',
+        'causes$' => 'cause',
+        'clauses$' => 'clause',
+        'uses$' => 'use',
+        'bases$' => 'base',
+        'cases$' => 'case',
+        'phases$' => 'phase',
+        'phrases$' => 'phrase',
+        'releases$' => 'release',
+        'increases$' => 'increase',
+        'decreases$' => 'decrease',
+        'leases$' => 'lease',
+        'diseases$' => 'disease',
+        'exercises$' => 'exercise',
+        'compromises$' => 'compromise',
+        'analyses$' => 'analysis',
+        'syntheses$' => 'synthesis',
+        'theses$' => 'thesis',
+        'hypotheses$' => 'hypothesis',
+        'crises$' => 'crisis',
+        'oases$' => 'oasis',
+        'diagnoses$' => 'diagnosis',
+        'prognoses$' => 'prognosis',
+        'parentheses$' => 'parenthesis',
+        'ellipses$' => 'ellipsis',
+        'synopses$' => 'synopsis',
+        'metropolises$' => 'metropolis',
+        'necropolises$' => 'necropolis',
+        'children$' => 'child',
+        'feet$' => 'foot',
+        'teeth$' => 'tooth',
+        'geese$' => 'goose',
+        'mice$' => 'mouse',
+        'men$' => 'man',
+        'women$' => 'woman',
+        'people$' => 'person',
+        'oxen$' => 'ox',
+        'sheep$' => 'sheep',
+        'deer$' => 'deer',
+        'fish$' => 'fish',
+        'series$' => 'series',
+        'species$' => 'species',
+        'data$' => 'datum',
+        'media$' => 'medium',
+        'criteria$' => 'criterion',
+        'phenomena$' => 'phenomenon',
+        'categories$' => 'category',
+        'companies$' => 'company',
+        'countries$' => 'country',
+        'cities$' => 'city',
+        'histories$' => 'history',
+        'stories$' => 'story',
+        'activities$' => 'activity',
+        'facilities$' => 'facility',
+        'accessories$' => 'accessory',
+        'choices$' => 'choice',
+        'files$' => 'file',
+        'titles$' => 'title',
         'infos$' => 'info',
+        'logs$' => 'log', 
         'items$' => 'item',
         'users$' => 'user',
         'events$' => 'event',
+        'groups$' => 'group',
+        'folders$' => 'folder',
+        'variants$' => 'variant',
+        'options$' => 'option',
+        'sessions$' => 'session',
+        'lessons$' => 'lesson',
+        'results$' => 'result',
+        'tests$' => 'test',
+        'tools$' => 'tool',
+        'classes$' => 'class',
+        'answers$' => 'answer',
+        'questions$' => 'question',
+        'cards$' => 'card',
+        'entries$' => 'entry',
+        'tags$' => 'tag',
+        'values$' => 'value',
+        'configs$' => 'config',
+        'settings$' => 'setting',
+        'monitorings$' => 'monitoring',
     ];
-    
-    foreach ($rules as $pattern => $replacement) {
+
+    // Apply specific rules
+    foreach ($specificRules as $pattern => $replacement) {
         if (preg_match('/' . $pattern . '/i', $word)) {
             return preg_replace('/' . $pattern . '/i', $replacement, $word);
         }
     }
-    
-    return $word;
+
+    // General rules (applied after specific rules)
+    $generalRules = [
+        'ies$' => 'y',      // cities -> city, companies -> company
+        'ves$' => 'fe',     // lives -> life, knives -> knife
+        'oes$' => 'o',      // heroes -> hero, potatoes -> potato
+        'ches$' => 'ch',    // matches -> match, watches -> watch
+        'shes$' => 'sh',    // dishes -> dish, brushes -> brush
+        'xes$' => 'x',      // boxes -> box, taxes -> tax
+        'zes$' => 'z',      // quizzes -> quiz
+        'sses$' => 'ss',    // classes -> class, addresses -> address
+        's$' => '',         // cars -> car, books -> book (most common)
+    ];
+
+    // Apply general rules
+    foreach ($generalRules as $pattern => $replacement) {
+        if (preg_match('/' . $pattern . '/i', $word)) {
+            return preg_replace('/' . $pattern . '/i', $replacement, $word);
+        }
+    }
+
+    return $word; // If no rule matches, return the original word
 }
 
 // Parse SQL
 $tables = parseSqlTables($sqlContent);
 
-// Tạo mapping table -> model
-$importantTables = [
-    'block_uis' => 'BlockUi',
-    'categories' => 'Category', 
-    'change_logs' => 'ChangeLog',
-    'menus' => 'Menu',
-    'news' => 'News',
-    'roles' => 'Role', 
-    'users' => 'User',
-    'permissions' => 'Permission',
-    'carts' => 'Cart',
-    'cart_items' => 'CartItem',
-    'conference_cats' => 'ConferenceCat',
-    'conference_infos' => 'ConferenceInfo',
-    'cost_items' => 'CostItem',
-    'crm_app_infos' => 'CrmAppInfo',
-    'crm_messages' => 'CrmMessage',
-    'crm_message_groups' => 'CrmMessageGroup',
-    'departments' => 'Department',
-    'department_events' => 'DepartmentEvent',
-    'department_users' => 'DepartmentUser',
-    'download_logs' => 'DownloadLog',
-    'event_and_users' => 'EventAndUser',
-    'event_face_infos' => 'EventFaceInfo',
-    'event_infos' => 'EventInfo',
-    'event_registers' => 'EventRegister',
-    'file_uploads' => 'FileUpload',
-    'folder_files' => 'FolderFile',
-    'news_folders' => 'NewsFolder',
-    'notifications' => 'Notification',
-    'products' => 'Product',
-    'product_folders' => 'ProductFolder',
-    'product_tags' => 'ProductTag',
-    'tags' => 'Tag',
-];
+// Auto-generate mapping cho tất cả tables
+function tableNameToModelName($tableName) {
+    // Loại bỏ prefix nếu có
+    $cleanName = $tableName;
+    
+    // Convert snake_case to PascalCase và singularize
+    $parts = explode('_', $cleanName);
+    $modelName = '';
+    
+    foreach ($parts as $part) {
+        $modelName .= ucfirst(singularize($part));
+    }
+    
+    return $modelName;
+}
 
-echo "Generated MongoDB field types for models:\n\n";
+// Tạo mapping cho TẤT CẢ tables
+$allTables = [];
+foreach ($tables as $tableName => $fields) {
+    $modelName = tableNameToModelName($tableName);
+    $allTables[$tableName] = $modelName;
+}
 
-foreach ($importantTables as $tableName => $modelName) {
+echo "Generated MongoDB field types for ALL models:\n\n";
+
+foreach ($allTables as $tableName => $modelName) {
     if (isset($tables[$tableName])) {
         echo "// ========== {$modelName} Model ==========\n";
         echo generateModelClass($tableName, $tables[$tableName]);
@@ -151,4 +285,4 @@ foreach ($importantTables as $tableName => $modelName) {
 }
 
 echo "\nTotal tables processed: " . count($tables) . "\n";
-echo "Important models generated: " . count($importantTables) . "\n";
+echo "ALL models generated: " . count($allTables) . "\n";

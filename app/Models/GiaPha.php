@@ -15,6 +15,50 @@ class GiaPha extends ModelGlxBase
 
     protected $guarded = [];
 
+    /**
+     * Define MongoDB field types
+     * Auto-generated from SQL structure
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'id__' => 'string',
+        'parent_id' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'name' => 'string',
+        'title' => 'string',
+        'home_address' => 'string',
+        'summary' => 'string',
+        'content' => 'string',
+        'orders' => 'int',
+        'child_type' => 'int',
+        'gender' => 'int',
+        'birthday' => 'string',
+        'date_of_death' => 'string',
+        'place_birthday' => 'string',
+        'place_heaven' => 'string',
+        'child_of_second_married' => 'int',
+        'status' => 'int',
+        'last_name' => 'string',
+        'sur_name' => 'string',
+        'married_with' => 'int',
+        'image_list' => 'string',
+        'user_id' => 'int',
+        'tmp_old_id' => 'int',
+        'tmp_old_pid' => 'int',
+        'tmp_old_obj_json' => 'string',
+        'phone_number' => 'string',
+        'email_address' => 'string',
+        'col_fix' => 'int',
+        'row_fix' => 'int',
+        'link_remote' => 'string',
+        'set_nu_dinh' => 'int',
+        'list_child_x_y' => 'string',
+        'stepchild_of' => 'int',
+    ];
+
     public function countMember()
     {
         $nC = $this->countChild();

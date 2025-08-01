@@ -13,6 +13,24 @@ class NetworkMarketing extends ModelGlxBase
 
     protected $guarded = [];
 
+    /**
+     * Define MongoDB field types
+     * Auto-generated from SQL structure
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'project_id' => 'int',
+        'user_id' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'log' => 'string',
+        'parent_id' => 'int',
+        'orders' => 'int',
+    ];
+
     public static function getLinkMarketingNetwork($id, $pad = 'shb')
     {
         if (is_numeric($id)) {

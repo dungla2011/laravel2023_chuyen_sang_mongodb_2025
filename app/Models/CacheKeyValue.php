@@ -11,6 +11,16 @@ class CacheKeyValue extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    /**
+     * Define MongoDB field types
+     * Auto-generated from SQL structure
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'key' => 'string',
+        'value' => 'string',
+    ];
 //    protected $connection = 'mysql_for_dev';
 
 }

@@ -1,0 +1,3640 @@
+﻿Generated MongoDB field types for ALL models:
+
+// ========== AffiliateLog Model ==========
+
+    /**
+     * Define MongoDB field types for AffiliateLog model
+     * Based on SQL: CREATE TABLE `affiliate_logs` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== Asset Model ==========
+
+    /**
+     * Define MongoDB field types for Asset model
+     * Based on SQL: CREATE TABLE `assets` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'id__' => 'string',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'barcode' => 'string',
+        'description' => 'string',
+        'parent_id' => 'int',
+        'location_id' => 'int',
+        'purchase_date' => 'date',
+        'value' => 'double',
+        'orders' => 'int',
+    ];
+
+// ========== AssetCategory Model ==========
+
+    /**
+     * Define MongoDB field types for AssetCategory model
+     * Based on SQL: CREATE TABLE `asset_categories` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'parent_id' => 'int',
+        'orders' => 'int',
+    ];
+
+// ========== BlockUi Model ==========
+
+    /**
+     * Define MongoDB field types for BlockUi model
+     * Based on SQL: CREATE TABLE `block_uis` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'sname' => 'string',
+        'summary' => 'string',
+        'summary2' => 'string',
+        'module_table' => 'string',
+        'idModule' => 'string',
+        'deleted_at' => 'date',
+        'updated_at' => 'date',
+        'log' => 'string',
+        'siteid' => 'int',
+        'extra_info' => 'string',
+        'image_list' => 'string',
+        'tags_list' => 'string',
+        'created_at' => 'date',
+        'status' => 'int',
+        'content' => 'string',
+        'guide_admin' => 'string',
+        'extra_color_background' => 'string',
+        'extra_color_text' => 'string',
+        'group_name' => 'string',
+    ];
+
+// ========== CacheKeyValue Model ==========
+
+    /**
+     * Define MongoDB field types for CacheKeyValue model
+     * Based on SQL: CREATE TABLE `cache_key_value` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'key' => 'string',
+        'value' => 'string',
+    ];
+
+// ========== CacheKeyValu Model ==========
+
+    /**
+     * Define MongoDB field types for CacheKeyValu model
+     * Based on SQL: CREATE TABLE `cache_key_values` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'string',
+        'value' => 'string',
+        'created_at' => 'string',
+        'updated_at' => 'string',
+    ];
+
+// ========== Cart Model ==========
+
+    /**
+     * Define MongoDB field types for Cart model
+     * Based on SQL: CREATE TABLE `carts` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== CartItem Model ==========
+
+    /**
+     * Define MongoDB field types for CartItem model
+     * Based on SQL: CREATE TABLE `cart_items` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'cart_id' => 'int',
+        'user_id' => 'int',
+        'quantity' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'product_id' => 'int',
+        'log' => 'string',
+    ];
+
+// ========== Category Model ==========
+
+    /**
+     * Define MongoDB field types for Category model
+     * Based on SQL: CREATE TABLE `categories` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'parent_id' => 'int',
+        'slug' => 'string',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'site_id' => 'int',
+    ];
+
+// ========== ChangeLog Model ==========
+
+    /**
+     * Define MongoDB field types for ChangeLog model
+     * Based on SQL: CREATE TABLE `change_logs` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'user_id' => 'int',
+        'user_id_admin' => 'int',
+        'change_log' => 'string',
+        'tables' => 'string',
+        'id_row' => 'int',
+        'cmd' => 'string',
+        'ip_address' => 'string',
+        'tag_log' => 'string',
+    ];
+
+// ========== CloudGroup Model ==========
+
+    /**
+     * Define MongoDB field types for CloudGroup model
+     * Based on SQL: CREATE TABLE `cloud_group` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'groupname' => 'string',
+        'gid' => 'int',
+        'members' => 'string',
+    ];
+
+// ========== CloudServer Model ==========
+
+    /**
+     * Define MongoDB field types for CloudServer model
+     * Based on SQL: CREATE TABLE `cloud_servers` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'domain' => 'string',
+        'proxy_domain' => 'string',
+        'mount_list' => 'string',
+        'mount_list_disable_rep' => 'string',
+        'replicate_now' => 'int',
+        'iscache' => 'int',
+        'comment' => 'string',
+        'enable' => 'int',
+        'file_service_port' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+    ];
+
+// ========== CloudTransfer Model ==========
+
+    /**
+     * Define MongoDB field types for CloudTransfer model
+     * Based on SQL: CREATE TABLE `cloud_transfer` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'userid' => 'string',
+        'file' => 'string',
+        'bytes' => 'int',
+        'host' => 'string',
+        'ip' => 'string',
+        'cmd' => 'string',
+        'transfer_time' => 'int',
+        'time' => 'date',
+        'status' => 'string',
+    ];
+
+// ========== ConferenceCat Model ==========
+
+    /**
+     * Define MongoDB field types for ConferenceCat model
+     * Based on SQL: CREATE TABLE `conference_cats` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== ConferenceInfo Model ==========
+
+    /**
+     * Define MongoDB field types for ConferenceInfo model
+     * Based on SQL: CREATE TABLE `conference_infos` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'sub_title' => 'string',
+        'summary' => 'string',
+        'images' => 'string',
+        'cat' => 'int',
+        'key_notes' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'conf1_video' => 'string',
+        'conf1_images' => 'string',
+        'conf1_image_title' => 'string',
+        'conf1_timesheet' => 'string',
+        'conf1_keynote' => 'string',
+        'conf1_name' => 'string',
+        'conf2_name' => 'string',
+        'conf2_keynote' => 'string',
+        'conf2_timesheet' => 'string',
+        'conf2_images' => 'string',
+        'conf2_image_title' => 'string',
+        'conf2_video' => 'string',
+        'conf3_video' => 'string',
+        'conf3_images' => 'string',
+        'conf3_image_title' => 'string',
+        'conf3_timesheet' => 'string',
+        'conf3_keynote' => 'string',
+        'conf3_name' => 'string',
+        'video_bottom' => 'string',
+        'supporters' => 'string',
+        'right_column' => 'string',
+        'orders' => 'int',
+    ];
+
+// ========== CostItem Model ==========
+
+    /**
+     * Define MongoDB field types for CostItem model
+     * Based on SQL: CREATE TABLE `cost_items` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'item_name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'category' => 'int',
+        'cost' => 'int',
+        'quantity' => 'int',
+        'depreciation' => 'int',
+    ];
+
+// ========== CrmAppInfo Model ==========
+
+    /**
+     * Define MongoDB field types for CrmAppInfo model
+     * Based on SQL: CREATE TABLE `crm_app_infos` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== CrmMessag Model ==========
+
+    /**
+     * Define MongoDB field types for CrmMessag model
+     * Based on SQL: CREATE TABLE `crm_messages` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'type' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'msg_id' => 'string',
+        'cli_msg_id' => 'string',
+        'action_id' => 'string',
+        'msg_type' => 'string',
+        'uid_from' => 'string',
+        'id_to' => 'string',
+        'd_name' => 'string',
+        'ts' => 'int',
+        'content' => 'string',
+        'notify' => 'int',
+        'ttl' => 'int',
+        'uin' => 'string',
+        'user_id_ext' => 'string',
+        'cmd' => 'int',
+        'st' => 'int',
+        'at' => 'int',
+        'real_msg_id' => 'string',
+        'thread_id' => 'string',
+        'is_self' => 'int',
+        'property_ext' => 'string',
+        'params_ext' => 'string',
+        'channel_name' => 'string',
+    ];
+
+// ========== CrmMessageGroup Model ==========
+
+    /**
+     * Define MongoDB field types for CrmMessageGroup model
+     * Based on SQL: CREATE TABLE `crm_message_groups` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'gid' => 'string',
+        'avatar' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'link_group' => 'string',
+        'channel_name' => 'string',
+        'full_info' => 'string',
+    ];
+
+// ========== DemoAndTagTbl Model ==========
+
+    /**
+     * Define MongoDB field types for DemoAndTagTbl model
+     * Based on SQL: CREATE TABLE `demo_and_tag_tbls` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'tag_id' => 'int',
+        'demo_id' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+    ];
+
+// ========== DemoFolderTbl Model ==========
+
+    /**
+     * Define MongoDB field types for DemoFolderTbl model
+     * Based on SQL: CREATE TABLE `demo_folder_tbls` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'name' => 'string',
+        'user_id' => 'int',
+        'parent_id' => 'string',
+        'summary' => 'string',
+        'status' => 'int',
+        'log' => 'string',
+        'orders' => 'int',
+    ];
+
+// ========== DemoSub1 Model ==========
+
+    /**
+     * Define MongoDB field types for DemoSub1 model
+     * Based on SQL: CREATE TABLE `demo_sub1s` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'demo_id' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'sub_val' => 'string',
+    ];
+
+// ========== DemoTbl Model ==========
+
+    /**
+     * Define MongoDB field types for DemoTbl model
+     * Based on SQL: CREATE TABLE `demo_tbls` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'deleted_at' => 'date',
+        'id' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'user_id' => 'int',
+        'number1' => 'int',
+        'number2' => 'int',
+        'string1' => 'string',
+        'string2' => 'string',
+        'textarea1' => 'string',
+        'textarea2' => 'string',
+        'tag_list_id' => 'string',
+        'status' => 'int',
+        'parent_id' => 'int',
+        'parent2' => 'int',
+        'parent_multi' => 'string',
+        'parent_multi2' => 'string',
+        'image_list1' => 'string',
+        'image_list2' => 'string',
+        'orders' => 'int',
+        'name' => 'string',
+    ];
+
+// ========== Department Model ==========
+
+    /**
+     * Define MongoDB field types for Department model
+     * Based on SQL: CREATE TABLE `departments` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== DepartmentEvent Model ==========
+
+    /**
+     * Define MongoDB field types for DepartmentEvent model
+     * Based on SQL: CREATE TABLE `department_events` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'user_id' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'log' => 'string',
+        'event_id' => 'int',
+        'department_id' => 'int',
+    ];
+
+// ========== DepartmentUser Model ==========
+
+    /**
+     * Define MongoDB field types for DepartmentUser model
+     * Based on SQL: CREATE TABLE `department_users` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'user_id' => 'int',
+        'department_id' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'log' => 'string',
+    ];
+
+// ========== DonViHanhChinh Model ==========
+
+    /**
+     * Define MongoDB field types for DonViHanhChinh model
+     * Based on SQL: CREATE TABLE `don_vi_hanh_chinhs` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'code' => 'string',
+        'type' => 'string',
+        'parent_id' => 'int',
+        'level' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'orders' => 'int',
+    ];
+
+// ========== DownloadLog Model ==========
+
+    /**
+     * Define MongoDB field types for DownloadLog model
+     * Based on SQL: CREATE TABLE `download_logs` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'log' => 'string',
+        'sid_download' => 'double',
+        'file_refer_id' => 'int',
+        'file_id' => 'int',
+        'file_id_enc' => 'string',
+        'filename' => 'string',
+        'size' => 'int',
+        'ip_request' => 'string',
+        'ip_download_done' => 'string',
+        'time_download_done' => 'date',
+        'count_dl' => 'int',
+        'sid_encode' => 'string',
+        'price_k' => 'int',
+        'user_id_file' => 'int',
+    ];
+
+// ========== EventAndUser Model ==========
+
+    /**
+     * Define MongoDB field types for EventAndUser model
+     * Based on SQL: CREATE TABLE `event_and_users` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'user_event_id' => 'int',
+        'event_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'sent_mail_at' => 'date',
+        'sent_sms_at' => 'date',
+        'confirm_join_at' => 'date',
+        'deny_join_at' => 'date',
+        'attend_at' => 'date',
+        'note' => 'string',
+        'extra_info1' => 'string',
+        'extra_info2' => 'string',
+        'extra_info3' => 'string',
+        'extra_info4' => 'string',
+        'extra_info5' => 'string',
+        'signature' => 'int',
+    ];
+
+// ========== EventFaceInfo Model ==========
+
+    /**
+     * Define MongoDB field types for EventFaceInfo model
+     * Based on SQL: CREATE TABLE `event_face_infos` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'user_event_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'extra_info' => 'string',
+        'face_vector' => 'string',
+    ];
+
+// ========== EventInfo Model ==========
+
+    /**
+     * Define MongoDB field types for EventInfo model
+     * Based on SQL: CREATE TABLE `event_infos` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'id__' => 'string',
+        'name' => 'string',
+        'name_sub' => 'string',
+        'parent_id' => 'int',
+        'orders' => 'int',
+        'action' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'image_register' => 'string',
+        'opacity' => 'int',
+        'log' => 'string',
+        'location' => 'string',
+        'number_user' => 'int',
+        'time_start' => 'date',
+        'time_end' => 'date',
+        'mail_title1' => 'string',
+        'content1' => 'string',
+        'content1_en' => 'string',
+        'content3' => 'string',
+        'content2' => 'string',
+        'content2_en' => 'string',
+        'content3_en' => 'string',
+        'sms_content3' => 'string',
+        'sms_content1' => 'string',
+        'sms_content2' => 'string',
+        'sms_content1_en' => 'string',
+        'sms_content2_en' => 'string',
+        'sms_content3_en' => 'string',
+        'attached_files_email1' => 'string',
+        'attached_files_email1_en' => 'string',
+        'attached_files_email2' => 'string',
+        'attached_files_email2_en' => 'string',
+        'attached_files_email3' => 'string',
+        'attached_files_email3_en' => 'string',
+        'files' => 'string',
+        'mail_title2' => 'string',
+        'mail_title3' => 'string',
+        'mail_title1_en' => 'string',
+        'mail_title2_en' => 'string',
+        'mail_title3_en' => 'string',
+        'require_sign' => 'int',
+        'require_sign_this_event' => 'int',
+        'allow_public_reg' => 'int',
+        'reg_mail_01_vi' => 'string',
+        'reg_mail_02_vi' => 'string',
+        'reg_mail_01_en' => 'string',
+        'reg_mail_02_en' => 'string',
+        'reg_mail_title_vi1' => 'string',
+        'reg_mail_title_vi2' => 'string',
+        'reg_mail_title_en1' => 'string',
+        'reg_mail_title_en2' => 'string',
+        'department' => 'int',
+        'time_start_check_in' => 'date',
+        'user_need_image_to_reg' => 'int',
+        'limit_max_member' => 'int',
+    ];
+
+// ========== EventRegister Model ==========
+
+    /**
+     * Define MongoDB field types for EventRegister model
+     * Based on SQL: CREATE TABLE `event_registers` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'user_event_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'event_id' => 'int',
+        'phone' => 'string',
+        'address' => 'string',
+        'organization' => 'string',
+        'note' => 'string',
+        'email' => 'string',
+        'first_name' => 'string',
+        'last_name' => 'string',
+        'reg_code' => 'string',
+        'reg_confirm_time' => 'date',
+        'lang' => 'string',
+        'gender' => 'int',
+        'designation' => 'string',
+        'content_mail1' => 'string',
+        'content_mail2' => 'string',
+        'sub_event_list' => 'string',
+    ];
+
+// ========== EventSendAction Model ==========
+
+    /**
+     * Define MongoDB field types for EventSendAction model
+     * Based on SQL: CREATE TABLE `event_send_actions` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'type' => 'string',
+        'event_id' => 'int',
+        'done' => 'int',
+        'count_send' => 'int',
+        'pusher_chanel' => 'string',
+        'select_content' => 'string',
+        'select_user_type' => 'string',
+        'user_email_send_override' => 'string',
+        'last_force_send' => 'date',
+        'content_raw_send' => 'string',
+        'list_uid_send_done' => 'string',
+        'count_success' => 'string',
+        'pushed_all_sms_to_queue' => 'date',
+    ];
+
+// ========== EventSendEmailLog Model ==========
+
+    /**
+     * Define MongoDB field types for EventSendEmailLog model
+     * Based on SQL: CREATE TABLE `event_send_email_logs` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== EventSendInfoLog Model ==========
+
+    /**
+     * Define MongoDB field types for EventSendInfoLog model
+     * Based on SQL: CREATE TABLE `event_send_info_logs` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'event_user_id' => 'int',
+        'event_id' => 'int',
+        'type' => 'string',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'title_email' => 'string',
+        'content' => 'string',
+        'content_sms' => 'string',
+        'session_id' => 'string',
+        'sms_unique_session' => 'string',
+        'comment' => 'string',
+        'send_or_get' => 'string',
+        'count_success' => 'int',
+        'user_id' => 'int',
+        'last_app_sms_request_to_send' => 'date',
+        'done_at' => 'string',
+        'phone_send' => 'string',
+        'count_retry_send' => 'int',
+    ];
+
+// ========== EventSendSmLog Model ==========
+
+    /**
+     * Define MongoDB field types for EventSendSmsLog model
+     * Based on SQL: CREATE TABLE `event_send_sms_logs` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== EventSetting Model ==========
+
+    /**
+     * Define MongoDB field types for EventSetting model
+     * Based on SQL: CREATE TABLE `event_settings` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'comment' => 'string',
+        'value' => 'string',
+        'user_id' => 'int',
+        'department_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== EventUserGroup Model ==========
+
+    /**
+     * Define MongoDB field types for EventUserGroup model
+     * Based on SQL: CREATE TABLE `event_user_groups` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'parent_id' => 'int',
+        'orders' => 'int',
+        'address' => 'string',
+        'email' => 'string',
+        'phone' => 'string',
+    ];
+
+// ========== EventUserInfo Model ==========
+
+    /**
+     * Define MongoDB field types for EventUserInfo model
+     * Based on SQL: CREATE TABLE `event_user_infos` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'parent_id' => 'int',
+        'parent_extra' => 'string',
+        'parent_all' => 'string',
+        'title' => 'string',
+        'first_name' => 'string',
+        'last_name' => 'string',
+        'email' => 'string',
+        'phone' => 'string',
+        'address' => 'string',
+        'organization' => 'string',
+        'designation' => 'string',
+        'language' => 'string',
+        'extra_info1' => 'string',
+        'extra_info2' => 'string',
+        'extra_info3' => 'string',
+        'extra_info4' => 'string',
+        'extra_info5' => 'string',
+        'signature' => 'string',
+        'note' => 'string',
+        'gender' => 'int',
+    ];
+
+// ========== EventUserPayment Model ==========
+
+    /**
+     * Define MongoDB field types for EventUserPayment model
+     * Based on SQL: CREATE TABLE `event_user_payments` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== FaceData Model ==========
+
+    /**
+     * Define MongoDB field types for FaceData model
+     * Based on SQL: CREATE TABLE `face_data` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== FileCloud Model ==========
+
+    /**
+     * Define MongoDB field types for FileCloud model
+     * Based on SQL: CREATE TABLE `file_clouds` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'size' => 'int',
+        'file_path' => 'string',
+        'md5' => 'string',
+        'user_id' => 'int',
+        'crc32' => 'string',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'created_at' => 'date',
+        'location' => 'string',
+        'mime' => 'string',
+        'server1' => 'string',
+        'location1' => 'string',
+        'checksum' => 'string',
+        'log' => 'string',
+        'last_save_doc' => 'date',
+    ];
+
+// ========== FileRefer Model ==========
+
+    /**
+     * Define MongoDB field types for FileRefer model
+     * Based on SQL: CREATE TABLE `file_refers` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'site' => 'string',
+        'remote_id' => 'int',
+        'remote_url' => 'string',
+        'filesize' => 'int',
+        'param1' => 'string',
+        'param2' => 'string',
+        'refer_obj' => 'string',
+        'price_k' => 'int',
+        'count_dl' => 'int',
+        'make_torrent' => 'int',
+    ];
+
+// ========== FileSharePermission Model ==========
+
+    /**
+     * Define MongoDB field types for FileSharePermission model
+     * Based on SQL: CREATE TABLE `file_share_permissions` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== FileUpload Model ==========
+
+    /**
+     * Define MongoDB field types for FileUpload model
+     * Based on SQL: CREATE TABLE `file_uploads` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'id__' => 'string',
+        'name' => 'string',
+        'user_id' => 'int',
+        'created_at' => 'date',
+        'deleted_at' => 'date',
+        'updated_at' => 'date',
+        'file_path' => 'string',
+        'file_size' => 'int',
+        'log' => 'string',
+        'parent_id' => 'int',
+        'cloud_id' => 'int',
+        'md5' => 'string',
+        'crc32' => 'string',
+        'comment' => 'string',
+        'mime' => 'string',
+        'refer' => 'string',
+        'count_download' => 'int',
+        'idlink' => 'int',
+        'checksum' => 'string',
+        'link1' => 'string',
+        'ip_upload' => 'string',
+    ];
+
+// ========== FolderFile Model ==========
+
+    /**
+     * Define MongoDB field types for FolderFile model
+     * Based on SQL: CREATE TABLE `folder_files` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'id__' => 'string',
+        'name' => 'string',
+        'created_at' => 'date',
+        'deleted_at' => 'date',
+        'updated_at' => 'date',
+        'parent_id' => 'int',
+        'orders' => 'int',
+        'user_id' => 'int',
+        'link1' => 'string',
+    ];
+
+// ========== GiaPha Model ==========
+
+    /**
+     * Define MongoDB field types for GiaPha model
+     * Based on SQL: CREATE TABLE `gia_phas` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'id__' => 'string',
+        'parent_id' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'name' => 'string',
+        'title' => 'string',
+        'home_address' => 'string',
+        'summary' => 'string',
+        'content' => 'string',
+        'orders' => 'int',
+        'child_type' => 'int',
+        'gender' => 'int',
+        'birthday' => 'string',
+        'date_of_death' => 'string',
+        'place_birthday' => 'string',
+        'place_heaven' => 'string',
+        'child_of_second_married' => 'int',
+        'status' => 'int',
+        'last_name' => 'string',
+        'sur_name' => 'string',
+        'married_with' => 'int',
+        'image_list' => 'string',
+        'user_id' => 'int',
+        'tmp_old_id' => 'int',
+        'tmp_old_pid' => 'int',
+        'tmp_old_obj_json' => 'string',
+        'phone_number' => 'string',
+        'email_address' => 'string',
+        'col_fix' => 'int',
+        'row_fix' => 'int',
+        'link_remote' => 'string',
+        'set_nu_dinh' => 'int',
+        'list_child_x_y' => 'string',
+        'stepchild_of' => 'int',
+    ];
+
+// ========== GiaPhaUser Model ==========
+
+    /**
+     * Define MongoDB field types for GiaPhaUser model
+     * Based on SQL: CREATE TABLE `gia_pha_users` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'user_id' => 'int',
+        'created_at' => 'date',
+        'deleted_at' => 'date',
+        'updated_at' => 'date',
+        'max_quota_node' => 'int',
+        'parent_id' => 'int',
+        'version_using' => 'int',
+    ];
+
+// ========== HatecoCertificat Model ==========
+
+    /**
+     * Define MongoDB field types for HatecoCertificat model
+     * Based on SQL: CREATE TABLE `hateco_certificates` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'ho' => 'string',
+        'ten' => 'string',
+        'ngay_sinh' => 'date',
+        'noi_sinh' => 'string',
+        'gioi_tinh' => 'string',
+        'dan_toc' => 'string',
+        'quoc_tich' => 'string',
+        'nganh_nghe' => 'string',
+        'trinh_do' => 'string',
+        'hinh_thuc' => 'string',
+        'nam_tot_nghiep' => 'int',
+        'xep_loai' => 'string',
+        'so_qd_cong_nhan_tn' => 'string',
+        'ngay_qd' => 'date',
+        'ngay_cap_bang' => 'date',
+        'so_hieu_bang_tn' => 'string',
+        'so_vao_goc_cap_bang' => 'string',
+        'co_so_dao_tao' => 'string',
+    ];
+
+// ========== HrConfigSessionOrgIdSalary Model ==========
+
+    /**
+     * Define MongoDB field types for HrConfigSessionOrgIdSalary model
+     * Based on SQL: CREATE TABLE `hr_config_session_org_id_salaries` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'session_type_id' => 'int',
+        'user_id' => 'int',
+        'orders' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'org_id' => 'int',
+        'job_title_id' => 'int',
+        'salary_month' => 'int',
+        'num1' => 'double',
+        'num2' => 'double',
+        'num3' => 'double',
+        'num4' => 'double',
+        'num5' => 'double',
+        'num6' => 'double',
+        'num7' => 'double',
+        'num8' => 'double',
+        'num9' => 'double',
+        'num10' => 'double',
+        'num11' => 'double',
+        'num12' => 'double',
+        'num13' => 'double',
+        'num14' => 'double',
+        'num15' => 'double',
+        'num16' => 'double',
+        'num17' => 'double',
+        'num18' => 'double',
+    ];
+
+// ========== HrContract Model ==========
+
+    /**
+     * Define MongoDB field types for HrContract model
+     * Based on SQL: CREATE TABLE `hr_contracts` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== HrDemoTimeEvent Model ==========
+
+    /**
+     * Define MongoDB field types for HrDemoTimeEvent model
+     * Based on SQL: CREATE TABLE `hr_demo_time_events` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== HrEmploye Model ==========
+
+    /**
+     * Define MongoDB field types for HrEmploye model
+     * Based on SQL: CREATE TABLE `hr_employees` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'id_card' => 'string',
+        'idcard_date' => 'date',
+        'idcard_place' => 'string',
+        'address' => 'string',
+        'address_permanent' => 'string',
+        'birth_day' => 'date',
+        'last_name' => 'string',
+        'first_name' => 'string',
+        'phone_number' => 'string',
+        'insurance_id' => 'string',
+        'log' => 'string',
+        'work_status' => 'int',
+        'job_title' => 'int',
+        'group_time' => 'int',
+        'parent_id' => 'int',
+        'orders' => 'int',
+        'admin_this_tree' => 'int',
+        'sex' => 'int',
+        'home_town' => 'string',
+        'certificate' => 'string',
+        'skill' => 'string',
+        'father_name' => 'string',
+        'father_birthday' => 'date',
+        'father_occupation' => 'string',
+        'father_work_place' => 'string',
+        'mother_name' => 'string',
+        'mother_birthday' => 'date',
+        'mother_occupation' => 'string',
+        'mother_work_place' => 'string',
+        'spouse_name' => 'string',
+        'spouse_birthday' => 'date',
+        'spouse_occupation' => 'string',
+        'spouse_work_place' => 'string',
+        'relatives_name' => 'string',
+        'relatives_birthday' => 'date',
+        'height' => 'double',
+        'weight' => 'double',
+        'nation' => 'string',
+        'str1' => 'string',
+        'str2' => 'string',
+        'str3' => 'string',
+        'str4' => 'string',
+        'str5' => 'string',
+        'str6' => 'string',
+        'str7' => 'string',
+        'str8' => 'string',
+        'str9' => 'string',
+        'str10' => 'string',
+        'str11' => 'string',
+        'str12' => 'string',
+    ];
+
+// ========== HrExpenseColMng Model ==========
+
+    /**
+     * Define MongoDB field types for HrExpenseColMng model
+     * Based on SQL: CREATE TABLE `hr_expense_col_mngs` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'field' => 'string',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'org_id' => 'int',
+    ];
+
+// ========== HrExtraCostEmploye Model ==========
+
+    /**
+     * Define MongoDB field types for HrExtraCostEmploye model
+     * Based on SQL: CREATE TABLE `hr_extra_cost_employees` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'month' => 'string',
+        'total' => 'int',
+        'sparam1' => 'int',
+        'sparam2' => 'int',
+        'sparam3' => 'int',
+        'sparam4' => 'int',
+        'sparam5' => 'int',
+        'sparam6' => 'int',
+        'sparam7' => 'int',
+        'sparam8' => 'int',
+        'sparam9' => 'int',
+        'sparam10' => 'int',
+        'sparam11' => 'int',
+        'sparam12' => 'int',
+        'sparam13' => 'int',
+        'sparam14' => 'int',
+        'sparam15' => 'int',
+        'sparam16' => 'int',
+        'sparam17' => 'int',
+        'sparam18' => 'int',
+    ];
+
+// ========== HrJob Model ==========
+
+    /**
+     * Define MongoDB field types for HrJob model
+     * Based on SQL: CREATE TABLE `hr_jobs` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== HrJobTitl Model ==========
+
+    /**
+     * Define MongoDB field types for HrJobTitl model
+     * Based on SQL: CREATE TABLE `hr_job_titles` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== HrKpiCldv Model ==========
+
+    /**
+     * Define MongoDB field types for HrKpiCldv model
+     * Based on SQL: CREATE TABLE `hr_kpi_cldvs` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== HrLateConfig Model ==========
+
+    /**
+     * Define MongoDB field types for HrLateConfig model
+     * Based on SQL: CREATE TABLE `hr_late_configs` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== HrLogTask Model ==========
+
+    /**
+     * Define MongoDB field types for HrLogTask model
+     * Based on SQL: CREATE TABLE `hr_log_tasks` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'task_id' => 'int',
+    ];
+
+// ========== HrMessageTask Model ==========
+
+    /**
+     * Define MongoDB field types for HrMessageTask model
+     * Based on SQL: CREATE TABLE `hr_message_tasks` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'message' => 'string',
+        'user_id' => 'int',
+        'task_id' => 'int',
+        'status' => 'int',
+        'type' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== HrOrgSetting Model ==========
+
+    /**
+     * Define MongoDB field types for HrOrgSetting model
+     * Based on SQL: CREATE TABLE `hr_org_settings` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'org_id' => 'int',
+        'job_title_id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'num1' => 'double',
+        'num2' => 'double',
+        'num3' => 'double',
+        'num4' => 'double',
+        'num5' => 'double',
+        'num6' => 'double',
+        'num7' => 'double',
+        'num8' => 'double',
+        'num9' => 'double',
+        'num10' => 'double',
+        'num11' => 'double',
+        'num12' => 'double',
+        'num13' => 'double',
+        'num14' => 'double',
+        'num15' => 'double',
+    ];
+
+// ========== HrOrgTre Model ==========
+
+    /**
+     * Define MongoDB field types for HrOrgTre model
+     * Based on SQL: CREATE TABLE `hr_org_trees` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'parent_id' => 'int',
+        'orders' => 'int',
+    ];
+
+// ========== HrSalary Model ==========
+
+    /**
+     * Define MongoDB field types for HrSalary model
+     * Based on SQL: CREATE TABLE `hr_salaries` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'job_title_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'log' => 'string',
+        'salary_hour' => 'int',
+        'salary_day' => 'int',
+        'salary_week' => 'int',
+        'salary_month' => 'int',
+    ];
+
+// ========== HrSalaryMonthUser Model ==========
+
+    /**
+     * Define MongoDB field types for HrSalaryMonthUser model
+     * Based on SQL: CREATE TABLE `hr_salary_month_users` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'month' => 'string',
+        'total' => 'int',
+        'sparam1' => 'int',
+        'sparam2' => 'int',
+        'sparam3' => 'int',
+        'sparam4' => 'int',
+        'sparam5' => 'int',
+        'sparam6' => 'int',
+        'sparam7' => 'int',
+        'sparam8' => 'int',
+        'sparam9' => 'int',
+        'sparam10' => 'int',
+        'sparam11' => 'int',
+        'sparam12' => 'int',
+        'sparam13' => 'int',
+        'sparam14' => 'int',
+        'sparam15' => 'int',
+        'sparam16' => 'int',
+        'sparam17' => 'int',
+        'sparam18' => 'int',
+    ];
+
+// ========== HrSampleTimeEvent Model ==========
+
+    /**
+     * Define MongoDB field types for HrSampleTimeEvent model
+     * Based on SQL: CREATE TABLE `hr_sample_time_events` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'time_frame' => 'string',
+        'cat1' => 'int',
+        'cat2' => 'int',
+        'num1' => 'double',
+        'num2' => 'double',
+        'num3' => 'double',
+        'num4' => 'double',
+    ];
+
+// ========== HrSessionTyp Model ==========
+
+    /**
+     * Define MongoDB field types for HrSessionTyp model
+     * Based on SQL: CREATE TABLE `hr_session_types` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'desc' => 'string',
+        'hour' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'log' => 'string',
+        'orders' => 'int',
+        'num1' => 'double',
+        'num2' => 'double',
+        'num3' => 'double',
+        'num4' => 'double',
+    ];
+
+// ========== HrTask Model ==========
+
+    /**
+     * Define MongoDB field types for HrTask model
+     * Based on SQL: CREATE TABLE `hr_tasks` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'user_id_get' => 'int',
+        'status' => 'int',
+        'done' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'job_id' => 'int',
+        'uid_list_chat' => 'string',
+        'type' => 'int',
+    ];
+
+// ========== HrTimeSheet Model ==========
+
+    /**
+     * Define MongoDB field types for HrTimeSheet model
+     * Based on SQL: CREATE TABLE `hr_time_sheets` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'time_in' => 'double',
+        'time_out' => 'double',
+        'over_time' => 'string',
+        'date_type' => 'int',
+        'n_session' => 'string',
+        'meal' => 'string',
+        'n_hour' => 'string',
+        'task_id' => 'int',
+        'org_id' => 'int',
+        'n_late' => 'string',
+        'time_frame' => 'string',
+    ];
+
+// ========== HrUserExpens Model ==========
+
+    /**
+     * Define MongoDB field types for HrUserExpens model
+     * Based on SQL: CREATE TABLE `hr_user_expenses` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'time_frame' => 'string',
+        'cat1' => 'int',
+        'cat2' => 'int',
+        'num1' => 'double',
+        'num2' => 'double',
+        'num3' => 'double',
+        'num4' => 'double',
+        'num_1' => 'double',
+        'num_2' => 'double',
+        'num_3' => 'double',
+        'num_4' => 'double',
+        'num5' => 'double',
+        'num6' => 'double',
+        'num_5' => 'double',
+        'num_6' => 'double',
+    ];
+
+// ========== LogUser Model ==========
+
+    /**
+     * Define MongoDB field types for LogUser model
+     * Based on SQL: CREATE TABLE `log_users` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'admin_uid' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'action' => 'string',
+        'url' => 'string',
+        'ip' => 'string',
+        'comment' => 'string',
+    ];
+
+// ========== MediaActor Model ==========
+
+    /**
+     * Define MongoDB field types for MediaActor model
+     * Based on SQL: CREATE TABLE `media_actors` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== MediaAuthor Model ==========
+
+    /**
+     * Define MongoDB field types for MediaAuthor model
+     * Based on SQL: CREATE TABLE `media_authors` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== MediaCat Model ==========
+
+    /**
+     * Define MongoDB field types for MediaCat model
+     * Based on SQL: CREATE TABLE `media_cats` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== MediaFolder Model ==========
+
+    /**
+     * Define MongoDB field types for MediaFolder model
+     * Based on SQL: CREATE TABLE `media_folders` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'parent_id' => 'int',
+        'orders' => 'int',
+    ];
+
+// ========== MediaItem Model ==========
+
+    /**
+     * Define MongoDB field types for MediaItem model
+     * Based on SQL: CREATE TABLE `media_items` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'parent_id' => 'int',
+        'parent_list' => 'string',
+        'parent_extra' => 'string',
+        'parent_all' => 'string',
+    ];
+
+// ========== MediaLink Model ==========
+
+    /**
+     * Define MongoDB field types for MediaLink model
+     * Based on SQL: CREATE TABLE `media_links` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'link' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'media_id' => 'int',
+        'refer' => 'string',
+    ];
+
+// ========== MediaVendor Model ==========
+
+    /**
+     * Define MongoDB field types for MediaVendor model
+     * Based on SQL: CREATE TABLE `media_vendors` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== MemberMember Model ==========
+
+    /**
+     * Define MongoDB field types for MembersMember model
+     * Based on SQL: CREATE TABLE `members_members` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'firstname' => 'string',
+        'lastname' => 'string',
+    ];
+
+// ========== Menu Model ==========
+
+    /**
+     * Define MongoDB field types for Menu model
+     * Based on SQL: CREATE TABLE `menus` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'parent_id' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'slug' => 'string',
+        'site_id' => 'int',
+    ];
+
+// ========== MenuTre Model ==========
+
+    /**
+     * Define MongoDB field types for MenuTre model
+     * Based on SQL: CREATE TABLE `menu_trees` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'parent_id' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'orders' => 'int',
+        'link' => 'string',
+        'gid_allow' => 'string',
+        'open_new_window' => 'int',
+        'icon' => 'string',
+        'id_news' => 'int',
+    ];
+
+// ========== Migration Model ==========
+
+    /**
+     * Define MongoDB field types for Migration model
+     * Based on SQL: CREATE TABLE `migrations` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'migration' => 'string',
+        'batch' => 'int',
+        'site_id' => 'int',
+    ];
+
+// ========== ModelMetaInfo Model ==========
+
+    /**
+     * Define MongoDB field types for ModelMetaInfo model
+     * Based on SQL: CREATE TABLE `model_meta_infos` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'table_name_model' => 'string',
+        'field' => 'string',
+        'sname' => 'string',
+        'name' => 'string',
+        'full_desc' => 'string',
+        'order_field' => 'int',
+        'dataType' => 'int',
+        'is_hiden_input' => 'int',
+        'show_in_index' => 'string',
+        'show_get_one' => 'string',
+        'searchable' => 'string',
+        'sortable' => 'string',
+        'editable' => 'string',
+        'editable_get_one' => 'string',
+        'readOnly' => 'string',
+        'limit_user_edit' => 'string',
+        'limit_dev_edit' => 'string',
+        'insertable' => 'string',
+        'join_func' => 'string',
+        'join_api' => 'string',
+        'join_api_field' => 'string',
+        'admin_url' => 'string',
+        'func_foreign_key_insert_update' => 'string',
+        'is_select' => 'string',
+        'css_class' => 'string',
+        'css_cell_class' => 'string',
+        'css' => 'string',
+        'link_to_view' => 'string',
+        'link_to_edit' => 'string',
+        'primary' => 'string',
+        'is_multilangg' => 'string',
+        'get_not_show' => 'string',
+        'join_relation_func' => 'string',
+        'data_type_in_db' => 'string',
+        'opt_field' => 'int',
+        'join_func_model' => 'string',
+        'width_col' => 'int',
+    ];
+
+// ========== MoneyAndTag Model ==========
+
+    /**
+     * Define MongoDB field types for MoneyAndTag model
+     * Based on SQL: CREATE TABLE `money_and_tags` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'money_id' => 'int',
+        'tag_id' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+    ];
+
+// ========== MoneyLog Model ==========
+
+    /**
+     * Define MongoDB field types for MoneyLog model
+     * Based on SQL: CREATE TABLE `money_logs` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'user_id' => 'int',
+        'name' => 'string',
+        'price' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'log' => 'string',
+        'cat' => 'string',
+    ];
+
+// ========== MoneyTag Model ==========
+
+    /**
+     * Define MongoDB field types for MoneyTag model
+     * Based on SQL: CREATE TABLE `money_tags` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'created_at' => 'date',
+        'deleted_at' => 'date',
+        'updated_at' => 'date',
+    ];
+
+// ========== MonitorItem Model ==========
+
+    /**
+     * Define MongoDB field types for MonitorItem model
+     * Based on SQL: CREATE TABLE `monitor_items` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'domain_url' => 'string',
+        'delay' => 'int',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== MyDocument Model ==========
+
+    /**
+     * Define MongoDB field types for MyDocument model
+     * Based on SQL: CREATE TABLE `my_documents` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'summary' => 'string',
+        'content' => 'string',
+        'refer' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'parent_id' => 'int',
+        'parent_list' => 'string',
+        'file_list' => 'string',
+        'parent_extra' => 'string',
+        'parent_all' => 'string',
+    ];
+
+// ========== MyDocumentCat Model ==========
+
+    /**
+     * Define MongoDB field types for MyDocumentCat model
+     * Based on SQL: CREATE TABLE `my_document_cats` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'parent_id' => 'int',
+        'orders' => 'int',
+    ];
+
+// ========== MyTreeInfo Model ==========
+
+    /**
+     * Define MongoDB field types for MyTreeInfo model
+     * Based on SQL: CREATE TABLE `my_tree_infos` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'id__' => 'string',
+        'name' => 'string',
+        'title' => 'string',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'user_id' => 'int',
+        'tree_id' => 'int',
+        'status' => 'int',
+        'image_list' => 'string',
+        'color_name' => 'string',
+        'color_title' => 'string',
+        'fontsize_name' => 'int',
+        'fontsize_title' => 'int',
+        'banner_name_margin_top' => 'int',
+        'banner_name_margin_bottom' => 'int',
+        'banner_title_margin_top' => 'int',
+        'banner_title_margin_bottom' => 'int',
+        'member_background_img' => 'string',
+        'member_background_img2' => 'string',
+        'banner_width' => 'int',
+        'banner_height' => 'int',
+        'banner_name_bold' => 'string',
+        'banner_name_italic' => 'string',
+        'banner_title_bold' => 'string',
+        'banner_title_italic' => 'string',
+        'banner_title_curver' => 'int',
+        'banner_name_curver' => 'int',
+        'banner_text_shadow_name' => 'string',
+        'banner_text_shadow_title' => 'string',
+        'banner_margin_top' => 'int',
+        'title_before_or_after_name' => 'int',
+        'tree_nodes_xy' => 'string',
+        'minX' => 'int',
+        'minY' => 'int',
+        'show_node_name_one' => 'int',
+        'show_node_title' => 'int',
+        'show_node_birthday_one' => 'int',
+        'show_node_date_of_death' => 'int',
+        'show_node_image' => 'int',
+        'node_width' => 'int',
+        'node_height' => 'int',
+        'space_node_x' => 'int',
+        'space_node_y' => 'int',
+        'font_size_node' => 'int',
+    ];
+
+// ========== NetworkMarketing Model ==========
+
+    /**
+     * Define MongoDB field types for NetworkMarketing model
+     * Based on SQL: CREATE TABLE `network_marketings` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'project_id' => 'int',
+        'user_id' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'log' => 'string',
+        'parent_id' => 'int',
+        'orders' => 'int',
+    ];
+
+// ========== New Model ==========
+
+    /**
+     * Define MongoDB field types for New model
+     * Based on SQL: CREATE TABLE `news` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'created_at' => 'date',
+        'deleted_at' => 'date',
+        'updated_at' => 'date',
+        'log' => 'string',
+        'parent_id' => 'int',
+        'summary' => 'string',
+        'content' => 'string',
+        'image_list' => 'string',
+        'status' => 'int',
+        'meta_desc' => 'string',
+        'options' => 'int',
+        'orders' => 'int',
+        'publish_status' => 'int',
+        'count_view' => 'int',
+    ];
+
+// ========== NewFolder Model ==========
+
+    /**
+     * Define MongoDB field types for NewsFolder model
+     * Based on SQL: CREATE TABLE `news_folders` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'created_at' => 'date',
+        'deleted_at' => 'date',
+        'updated_at' => 'date',
+        'parent_id' => 'int',
+        'log' => 'string',
+        'status' => 'int',
+        'orders' => 'int',
+        'front' => 'int',
+    ];
+
+// ========== Notification Model ==========
+
+    /**
+     * Define MongoDB field types for Notification model
+     * Based on SQL: CREATE TABLE `notifications` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'content' => 'string',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== OcrImage Model ==========
+
+    /**
+     * Define MongoDB field types for OcrImage model
+     * Based on SQL: CREATE TABLE `ocr_images` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'summary' => 'string',
+        'content' => 'string',
+        'draft' => 'string',
+        'image_list' => 'string',
+        'note' => 'string',
+    ];
+
+// ========== OrderInfo Model ==========
+
+    /**
+     * Define MongoDB field types for OrderInfo model
+     * Based on SQL: CREATE TABLE `order_infos` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'from_address' => 'string',
+        'to_address' => 'string',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'user_id' => 'int',
+        'phone_request' => 'string',
+        'email_request' => 'string',
+        'note1' => 'string',
+        'user_id_post' => 'int',
+        'user_id_get' => 'int',
+        'service_require' => 'int',
+        'start_time' => 'date',
+        'end_time' => 'date',
+        'money' => 'int',
+        'done_at' => 'date',
+        'status' => 'int',
+        'image_list' => 'string',
+        'order_status' => 'int',
+        'from_chanel' => 'string',
+        'transaction_id_local' => 'string',
+        'transaction_id_remote' => 'string',
+        'remote_ip' => 'string',
+        'comment' => 'string',
+        'usage_status' => 'string',
+    ];
+
+// ========== OrderItem Model ==========
+
+    /**
+     * Define MongoDB field types for OrderItem model
+     * Based on SQL: CREATE TABLE `order_items` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'user_id' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'order_id' => 'int',
+        'sku_id' => 'int',
+        'sku_string' => 'string',
+        'product_id' => 'int',
+        'price' => 'int',
+        'price_org' => 'int',
+        'quantity' => 'int',
+        'client_session_time' => 'string',
+        'end_time' => 'date',
+        'param1' => 'int',
+        'used' => 'int',
+        'log' => 'string',
+        'note' => 'string',
+    ];
+
+// ========== OrderShip Model ==========
+
+    /**
+     * Define MongoDB field types for OrderShip model
+     * Based on SQL: CREATE TABLE `order_ships` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'fee' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'user_id' => 'int',
+        'vendor_id' => 'int',
+        'order_id' => 'int',
+        'remote_tracking_id' => 'string',
+        'status' => 'int',
+        'log' => 'string',
+        'pick_time' => 'date',
+        'delive_time' => 'date',
+        'remote_label' => 'string',
+        'json_send' => 'string',
+        'json_get' => 'string',
+    ];
+
+// ========== PartnerInfo Model ==========
+
+    /**
+     * Define MongoDB field types for PartnerInfo model
+     * Based on SQL: CREATE TABLE `partner_infos` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'name' => 'string',
+        'deleted_at' => 'date',
+        'partner_name' => 'string',
+        'token_api' => 'string',
+        'note' => 'string',
+    ];
+
+// ========== Payment Model ==========
+
+    /**
+     * Define MongoDB field types for Payment model
+     * Based on SQL: CREATE TABLE `payments` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'order_id' => 'int',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'payment_method' => 'string',
+        'transaction_id' => 'string',
+    ];
+
+// ========== PayMoneylog Model ==========
+
+    /**
+     * Define MongoDB field types for PayMoneylog model
+     * Based on SQL: CREATE TABLE `pay_moneylogs` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'money' => 'double',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== Permission Model ==========
+
+    /**
+     * Define MongoDB field types for Permission model
+     * Based on SQL: CREATE TABLE `permissions` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'route_name_code' => 'string',
+        'display_name' => 'string',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'parent_id' => 'int',
+        'prefix' => 'string',
+        'url' => 'string',
+        'site_id' => 'int',
+    ];
+
+// ========== PermissionRole Model ==========
+
+    /**
+     * Define MongoDB field types for PermissionRole model
+     * Based on SQL: CREATE TABLE `permission_role` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'role_id' => 'int',
+        'permission_id' => 'string',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'site_id' => 'int',
+    ];
+
+// ========== PersonalAccesToken Model ==========
+
+    /**
+     * Define MongoDB field types for PersonalAccessToken model
+     * Based on SQL: CREATE TABLE `personal_access_tokens` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'tokenable_type' => 'string',
+        'tokenable_id' => 'int',
+        'name' => 'string',
+        'token' => 'string',
+        'abilities' => 'string',
+        'last_used_at' => 'date',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'site_id' => 'int',
+    ];
+
+// ========== PlanDefin Model ==========
+
+    /**
+     * Define MongoDB field types for PlanDefin model
+     * Based on SQL: CREATE TABLE `plan_defines` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== PlanDefineValu Model ==========
+
+    /**
+     * Define MongoDB field types for PlanDefineValu model
+     * Based on SQL: CREATE TABLE `plan_define_values` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== PlanNam Model ==========
+
+    /**
+     * Define MongoDB field types for PlanNam model
+     * Based on SQL: CREATE TABLE `plan_names` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== Product Model ==========
+
+    /**
+     * Define MongoDB field types for Product model
+     * Based on SQL: CREATE TABLE `products` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'deleted_at' => 'date',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'status' => 'int',
+        'meta_desc' => 'string',
+        'summary' => 'string',
+        'content' => 'string',
+        'price' => 'int',
+        'price1' => 'int',
+        'param1' => 'int',
+        'param2' => 'int',
+        'param3' => 'int',
+        'parent_id' => 'int',
+        'parent_extra' => 'string',
+        'parent_all' => 'string',
+        'image_list' => 'string',
+        'orders' => 'int',
+        'meta' => 'string',
+        'refer' => 'string',
+        'tmp' => 'string',
+        'type' => 'string',
+    ];
+
+// ========== ProductAttribut Model ==========
+
+    /**
+     * Define MongoDB field types for ProductAttribut model
+     * Based on SQL: CREATE TABLE `product_attributes` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'product_id' => 'int',
+        'attribute_name' => 'string',
+        'attribute_value' => 'string',
+    ];
+
+// ========== ProductFolder Model ==========
+
+    /**
+     * Define MongoDB field types for ProductFolder model
+     * Based on SQL: CREATE TABLE `product_folders` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'parent_id' => 'int',
+        'summary' => 'string',
+        'content' => 'string',
+        'orders' => 'int',
+        'meta_desc' => 'string',
+        'front' => 'int',
+    ];
+
+// ========== ProductImage Model ==========
+
+    /**
+     * Define MongoDB field types for ProductImage model
+     * Based on SQL: CREATE TABLE `product_images` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'image_path' => 'string',
+        'product_id' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'image_name' => 'string',
+        'site_id' => 'int',
+    ];
+
+// ========== ProductTag Model ==========
+
+    /**
+     * Define MongoDB field types for ProductTag model
+     * Based on SQL: CREATE TABLE `product_tags` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'product_id' => 'int',
+        'tag_id' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'site_id' => 'int',
+    ];
+
+// ========== ProductUsag Model ==========
+
+    /**
+     * Define MongoDB field types for ProductUsag model
+     * Based on SQL: CREATE TABLE `product_usages` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'product_id' => 'int',
+        'order_id' => 'int',
+        'usage_type' => 'string',
+        'usage_current' => 'int',
+    ];
+
+// ========== ProductVariant Model ==========
+
+    /**
+     * Define MongoDB field types for ProductVariant model
+     * Based on SQL: CREATE TABLE `product_variants` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'product_id' => 'int',
+        'name' => 'string',
+        'deleted_at' => 'date',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+    ];
+
+// ========== ProductVariantOption Model ==========
+
+    /**
+     * Define MongoDB field types for ProductVariantOption model
+     * Based on SQL: CREATE TABLE `product_variant_options` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'product_variant_id' => 'int',
+        'name' => 'string',
+        'deleted_at' => 'date',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+    ];
+
+// ========== QuizChoice Model ==========
+
+    /**
+     * Define MongoDB field types for QuizChoice model
+     * Based on SQL: CREATE TABLE `quiz_choices` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'value' => 'string',
+        'value_richtext' => 'string',
+        'question_id' => 'int',
+        'is_right_choice' => 'int',
+        'choice' => 'string',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'note' => 'string',
+        'orders' => 'int',
+        'enable' => 'int',
+    ];
+
+// ========== QuizClass Model ==========
+
+    /**
+     * Define MongoDB field types for QuizClass model
+     * Based on SQL: CREATE TABLE `quiz_classes` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'parent_id' => 'int',
+        'orders' => 'int',
+    ];
+
+// ========== QuizFlashCard Model ==========
+
+    /**
+     * Define MongoDB field types for QuizFlashCard model
+     * Based on SQL: CREATE TABLE `quiz_flash_cards` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'question' => 'string',
+        'answer' => 'string',
+    ];
+
+// ========== QuizFolder Model ==========
+
+    /**
+     * Define MongoDB field types for QuizFolder model
+     * Based on SQL: CREATE TABLE `quiz_folders` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'parent_id' => 'int',
+        'orders' => 'int',
+        'refer' => 'string',
+    ];
+
+// ========== QuizQuestion Model ==========
+
+    /**
+     * Define MongoDB field types for QuizQuestion model
+     * Based on SQL: CREATE TABLE `quiz_questions` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'answer' => 'string',
+        'is_active' => 'int',
+        'user_id' => 'int',
+        'is_english' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'summary' => 'string',
+        'content' => 'string',
+        'content_vi' => 'string',
+        'content_textarea' => 'string',
+        'draft' => 'string',
+        'image_list' => 'string',
+        'note' => 'string',
+        'note_book' => 'string',
+        'type' => 'int',
+        'explains' => 'string',
+        'hard_level' => 'int',
+        'class' => 'string',
+        'parent_id' => 'int',
+        'parent_list' => 'string',
+        'refer' => 'string',
+        'tmp' => 'string',
+        'obj_refer' => 'string',
+        'log' => 'string',
+        'cat1' => 'int',
+        'cat2' => 'int',
+    ];
+
+// ========== QuizSessionInfoTest Model ==========
+
+    /**
+     * Define MongoDB field types for QuizSessionInfoTest model
+     * Based on SQL: CREATE TABLE `quiz_session_info_tests` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'open_answer_time' => 'date',
+        'close_answer_time' => 'date',
+        'start_time_do' => 'date',
+        'end_time_do' => 'date',
+    ];
+
+// ========== QuizTest Model ==========
+
+    /**
+     * Define MongoDB field types for QuizTest model
+     * Based on SQL: CREATE TABLE `quiz_tests` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'summary' => 'string',
+        'enable' => 'int',
+        'user_id' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'note' => 'string',
+    ];
+
+// ========== QuizTestQuestion Model ==========
+
+    /**
+     * Define MongoDB field types for QuizTestQuestion model
+     * Based on SQL: CREATE TABLE `quiz_test_questions` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'test_id' => 'int',
+        'question_id' => 'int',
+        'user_id' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'note' => 'string',
+        'orders' => 'int',
+        'enable' => 'int',
+        'parent' => 'int',
+    ];
+
+// ========== QuizUserAndTest Model ==========
+
+    /**
+     * Define MongoDB field types for QuizUserAndTest model
+     * Based on SQL: CREATE TABLE `quiz_user_and_tests` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'test_id' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'percent_do' => 'double',
+        'point' => 'double',
+        'obj_result' => 'string',
+        'count_post' => 'int',
+        'session_id' => 'int',
+    ];
+
+// ========== QuizUserAnswer Model ==========
+
+    /**
+     * Define MongoDB field types for QuizUserAnswer model
+     * Based on SQL: CREATE TABLE `quiz_user_answers` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'question_id' => 'int',
+        'test_id' => 'int',
+        'choice_id' => 'int',
+        'explains' => 'string',
+        'is_right' => 'int',
+        'user_id' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'note' => 'string',
+    ];
+
+// ========== QuizUserClass Model ==========
+
+    /**
+     * Define MongoDB field types for QuizUserClass model
+     * Based on SQL: CREATE TABLE `quiz_user_classes` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'parent_id' => 'int',
+        'parent_list' => 'string',
+        'note' => 'string',
+    ];
+
+// ========== RandTable Model ==========
+
+    /**
+     * Define MongoDB field types for RandTable model
+     * Based on SQL: CREATE TABLE `rand_table` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'siteid' => 'int',
+        'id' => 'int',
+        'rand' => 'string',
+    ];
+
+// ========== Rol Model ==========
+
+    /**
+     * Define MongoDB field types for Rol model
+     * Based on SQL: CREATE TABLE `roles` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'display_name' => 'string',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'site_id' => 'int',
+    ];
+
+// ========== RoleUser Model ==========
+
+    /**
+     * Define MongoDB field types for RoleUser model
+     * Based on SQL: CREATE TABLE `role_user` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'user_id' => 'int',
+        'role_id' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'site_id' => 'int',
+        'deleted_at' => 'date',
+    ];
+
+// ========== SiteMng Model ==========
+
+    /**
+     * Define MongoDB field types for SiteMng model
+     * Based on SQL: CREATE TABLE `site_mngs` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'userid' => 'int',
+        'domain' => 'string',
+        'domain1' => 'string',
+        'domain2' => 'string',
+        'domain3' => 'string',
+        'domain4' => 'string',
+        'domain5' => 'string',
+        'templateName' => 'string',
+        'MEMBER_APP_NAME' => 'string',
+        'logo_image' => 'string',
+        'logo_image2' => 'string',
+        'logo_image3' => 'string',
+        'logo_text' => 'string',
+        'color1' => 'string',
+        'color2' => 'string',
+        'color3' => 'string',
+        'metaTitle' => 'string',
+        'metaTitleEn' => 'string',
+        'metaDescription' => 'string',
+        'metaKeyword' => 'string',
+        'metaHeader' => 'string',
+        'FACEBOOK_APP_ID' => 'string',
+        'FACEBOOK_APP_SECRET' => 'string',
+        'GOOGLE_OAUTH2_CLIENT_ID' => 'string',
+        'GOOGLE_OAUTH2_CLIENT_SECRET' => 'string',
+        'GOOGLE_SITE_VERIFICATION_CODE' => 'string',
+        'google_analytics_code' => 'string',
+        'language' => 'string',
+        'siteid' => 'int',
+        'admin_email' => 'string',
+        'admin_phone_support' => 'string',
+        'admin_name' => 'string',
+        'address1' => 'string',
+        'address2' => 'string',
+        'cache_time_minute' => 'int',
+        'cache_disable_to_time' => 'int',
+        'useMongo' => 'int',
+        'not_found_image_default' => 'string',
+        'facebook_message_appid' => 'string',
+        'facebook_message_link' => 'string',
+        'og_image_default' => 'string',
+        'maintain_text' => 'string',
+        'remarketting' => 'string',
+        'livechat' => 'string',
+        'facebook_pixel' => 'string',
+        'google_analytics_code2' => 'string',
+        'metaTitle_en' => 'string',
+        'metaTitle_jp' => 'string',
+        'metaDescription_en' => 'string',
+        'metaDescription_jp' => 'string',
+        'metaKeyword_en' => 'string',
+        'metaKeyword_jp' => 'string',
+        'encode_id1' => 'int',
+        'encode_id2' => 'int',
+        'useMetaReserveOfData' => 'int',
+        'useMetaReserveOfNews' => 'int',
+        'maxSizeUploadWebMB' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'int',
+        'site_code' => 'string',
+    ];
+
+// ========== Sku Model ==========
+
+    /**
+     * Define MongoDB field types for Sku model
+     * Based on SQL: CREATE TABLE `skus` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'product_id' => 'int',
+        'sku' => 'string',
+        'price0' => 'int',
+        'price' => 'int',
+        'weight' => 'int',
+        'deleted_at' => 'date',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'quantity' => 'int',
+        'product_opt_list' => 'string',
+        'width' => 'int',
+        'height' => 'int',
+        'param1' => 'int',
+    ];
+
+// ========== SkuProductVariantOption Model ==========
+
+    /**
+     * Define MongoDB field types for SkusProductVariantOption model
+     * Based on SQL: CREATE TABLE `skus_product_variant_options` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'sku_id' => 'int',
+        'product_variant_id' => 'int',
+        'product_variant_options_id' => 'int',
+        'id' => 'int',
+        'deleted_at' => 'date',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+    ];
+
+// ========== Spending Model ==========
+
+    /**
+     * Define MongoDB field types for Spending model
+     * Based on SQL: CREATE TABLE `spendings` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'user_id' => 'int',
+        'cat' => 'int',
+        'money' => 'int',
+        'note' => 'string',
+        'image_list' => 'string',
+    ];
+
+// ========== Tag Model ==========
+
+    /**
+     * Define MongoDB field types for Tag model
+     * Based on SQL: CREATE TABLE `tags` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'site_id' => 'int',
+    ];
+
+// ========== TagDemo Model ==========
+
+    /**
+     * Define MongoDB field types for TagDemo model
+     * Based on SQL: CREATE TABLE `tag_demos` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'site_id' => 'int',
+    ];
+
+// ========== TaskInfo Model ==========
+
+    /**
+     * Define MongoDB field types for TaskInfo model
+     * Based on SQL: CREATE TABLE `task_infos` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'user_id' => 'int',
+        'name' => 'string',
+        'description' => 'string',
+        'status' => 'string',
+        'priority' => 'string',
+        'due_date' => 'date',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'assigned_to' => 'int',
+        'parent_id' => 'int',
+        'orders' => 'int',
+        'file_list' => 'string',
+        'parent_extra' => 'string',
+        'parent_all' => 'string',
+    ];
+
+// ========== Telesal Model ==========
+
+    /**
+     * Define MongoDB field types for Telesal model
+     * Based on SQL: CREATE TABLE `telesales` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'from_address' => 'string',
+        'to_address' => 'string',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'user_id' => 'int',
+        'phone_request' => 'string',
+        'email_request' => 'string',
+        'note1' => 'string',
+        'note2' => 'string',
+        'user_id_post' => 'int',
+        'user_id_get' => 'int',
+        'service_require' => 'int',
+        'start_time' => 'date',
+        'end_time' => 'date',
+        'money' => 'int',
+        'done_at' => 'date',
+        'status' => 'int',
+        'image_list' => 'string',
+        'order_status' => 'int',
+        'from_chanel' => 'string',
+        'order_id_link' => 'int',
+        'token_time' => 'date',
+        'api_key_ship' => 'int',
+        'print_status' => 'int',
+    ];
+
+// ========== TelescopeEntry Model ==========
+
+    /**
+     * Define MongoDB field types for TelescopeEntry model
+     * Based on SQL: CREATE TABLE `telescope_entries` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'sequence' => 'int',
+        'uuid' => 'string',
+        'batch_id' => 'string',
+        'family_hash' => 'string',
+        'should_display_on_index' => 'int',
+        'type' => 'string',
+        'content' => 'string',
+        'created_at' => 'date',
+    ];
+
+// ========== TelescopeEntryTag Model ==========
+
+    /**
+     * Define MongoDB field types for TelescopeEntriesTag model
+     * Based on SQL: CREATE TABLE `telescope_entries_tags` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'entry_uuid' => 'string',
+        'tag' => 'string',
+    ];
+
+// ========== TelescopeMonitoring Model ==========
+
+    /**
+     * Define MongoDB field types for TelescopeMonitoring model
+     * Based on SQL: CREATE TABLE `telescope_monitoring` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'tag' => 'string',
+    ];
+
+// ========== TestMongo1 Model ==========
+
+    /**
+     * Define MongoDB field types for TestMongo1 model
+     * Based on SQL: CREATE TABLE `test_mongo1s` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== TmpDownloadSession Model ==========
+
+    /**
+     * Define MongoDB field types for TmpDownloadSession model
+     * Based on SQL: CREATE TABLE `tmp_download_sessions` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'user_id' => 'int',
+        'token' => 'string',
+        'fid' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'done_bytes' => 'int',
+        'ip_address' => 'string',
+        'ip_download_list' => 'string',
+        'file_size' => 'int',
+        'deleted_at' => 'date',
+        'time_begin_update_byte' => 'date',
+        'time_end_update_byte' => 'date',
+        'logs' => 'string',
+    ];
+
+// ========== Todo2 Model ==========
+
+    /**
+     * Define MongoDB field types for Todo2 model
+     * Based on SQL: CREATE TABLE `todo2s` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'note' => 'string',
+        'created_at' => 'date',
+        'deleted_at' => 'date',
+        'updated_at' => 'date',
+        'done_at' => 'date',
+    ];
+
+// ========== TransportInfo Model ==========
+
+    /**
+     * Define MongoDB field types for TransportInfo model
+     * Based on SQL: CREATE TABLE `transport_infos` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'from_address' => 'string',
+        'to_address' => 'string',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'user_id' => 'int',
+        'phone_request' => 'string',
+        'email_request' => 'string',
+        'text_desc' => 'string',
+        'user_id_post' => 'int',
+        'user_id_get' => 'int',
+        'service_require' => 'int',
+        'start_time' => 'date',
+        'end_time' => 'date',
+        'money' => 'int',
+        'done_at' => 'date',
+        'status' => 'int',
+        'image_list' => 'string',
+    ];
+
+// ========== TreeMngColFix Model ==========
+
+    /**
+     * Define MongoDB field types for TreeMngColFix model
+     * Based on SQL: CREATE TABLE `tree_mng_col_fixes` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'pid' => 'int',
+        'node_id' => 'int',
+        'col_fix' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'log' => 'string',
+    ];
+
+// ========== TypingLesson Model ==========
+
+    /**
+     * Define MongoDB field types for TypingLesson model
+     * Based on SQL: CREATE TABLE `typing_lessons` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'parent_name' => 'string',
+        'type_text' => 'string',
+        'refer' => 'string',
+        'name_en' => 'string',
+        'parent_name_en' => 'string',
+        'lesson' => 'int',
+    ];
+
+// ========== TypingTestResult Model ==========
+
+    /**
+     * Define MongoDB field types for TypingTestResult model
+     * Based on SQL: CREATE TABLE `typing_test_results` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+        'gsession' => 'string',
+        'end_time' => 'date',
+        'type_text' => 'string',
+        'lesson' => 'int',
+        'speedw' => 'int',
+        'speedc' => 'int',
+        'accuracy' => 'double',
+    ];
+
+// ========== UploaderInfo Model ==========
+
+    /**
+     * Define MongoDB field types for UploaderInfo model
+     * Based on SQL: CREATE TABLE `uploader_infos` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+// ========== User Model ==========
+
+    /**
+     * Define MongoDB field types for User model
+     * Based on SQL: CREATE TABLE `users` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'id__' => 'string',
+        'username' => 'string',
+        'password' => 'string',
+        'email' => 'string',
+        'phone_number' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'is_admin' => 'int',
+        'deleted_at' => 'date',
+        'token_user' => 'string',
+        'site_id' => 'int',
+        'name' => 'string',
+        'remember_token' => 'string',
+        'email_active_at' => 'date',
+        'reg_str' => 'string',
+        'log' => 'string',
+        'reset_pw' => 'string',
+        'avatar' => 'string',
+    ];
+
+// ========== UserCloud Model ==========
+
+    /**
+     * Define MongoDB field types for UserCloud model
+     * Based on SQL: CREATE TABLE `user_clouds` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'user_id' => 'int',
+        'quota_size' => 'int',
+        'quota_file' => 'int',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'created_at' => 'date',
+        'location_store_file' => 'string',
+        'glx_bytes_in_used' => 'int',
+        'glx_files_in_used' => 'int',
+        'quota_daily_download' => 'int',
+        'quota_limit_data' => 'int',
+        'glx_download_his' => 'string',
+        'glx_shell' => 'string',
+        'glx_uid' => 'int',
+        'glx_gid' => 'int',
+    ];
+
+// ========== UserGroup Model ==========
+
+    /**
+     * Define MongoDB field types for UserGroup model
+     * Based on SQL: CREATE TABLE `user_groups` (...)
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'id' => 'int',
+        'name' => 'string',
+        'user_id' => 'int',
+        'status' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'deleted_at' => 'date',
+        'image_list' => 'string',
+        'log' => 'string',
+    ];
+
+
+Total tables processed: 151
+ALL models generated: 151

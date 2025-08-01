@@ -13,6 +13,35 @@ class DemoTbl extends ModelGlxBase
 
     protected $guarded = [];
 
+    /**
+     * Define MongoDB field types
+     * Auto-generated from SQL structure
+     */
+    protected static $mongoFieldTypes = [
+        '_id' => 'objectId',
+        'deleted_at' => 'date',
+        'id' => 'int',
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'user_id' => 'int',
+        'number1' => 'int',
+        'number2' => 'int',
+        'string1' => 'string',
+        'string2' => 'string',
+        'textarea1' => 'string',
+        'textarea2' => 'string',
+        'tag_list_id' => 'string',
+        'status' => 'int',
+        'parent_id' => 'int',
+        'parent2' => 'int',
+        'parent_multi' => 'string',
+        'parent_multi2' => 'string',
+        'image_list1' => 'string',
+        'image_list2' => 'string',
+        'orders' => 'int',
+        'name' => 'string',
+    ];
+
     // Các hàm Set, Get riêng của Model laravel
     //    public function setNumber1Attribute($number1){
     //        $this->attributes['number1'] = $number1 * 2;
