@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use LadLib\Common\Database\MetaOfTableInDb;
+use MongoDB\BSON\ObjectId;
 
 /**
  * Các Repo sẽ có chung các hàm lấy data, chỉ khác nhau ở Model, nên có BaseRepo này
@@ -1328,9 +1329,9 @@ class BaseRepositorySql implements BaseRepositoryInterface
         }
 
         $pid = $param['pid'] ?? 0;
-        if ($objMeta->isUseRandId() && $pid && ! is_numeric($pid)) {
-            $pid = ClassRandId2::getIdFromRand($pid);
-        }
+        // if ($objMeta->isUseRandId() && $pid && ! is_numeric($pid)) {
+        //     $pid = ClassRandId2::getIdFromRand($pid);
+        // }
 
         //Ko cần vì chỉ có PID thôi?
         //        if($objMeta->isUseRandId()){
@@ -1356,13 +1357,31 @@ class BaseRepositorySql implements BaseRepositoryInterface
         //
         //        die();
 
-        if ($objParam && $objParam->need_set_uid && isset($mMeta['user_id'])) {
-            $ret = $this->model::create(['name' => $new_name, 'parent_id' => $pid, 'user_id' => $objParam->need_set_uid])->id;
-        } else {
-            $ret = $this->model::create(['name' => $new_name, 'parent_id' => $pid])->id;
-        }
+        if($pid)
+            $pid = new ObjectId($pid);
 
-        return rtJsonApiDone($ret, 'Create tree done!', 1, $new_name);
+        // Pre-generate ObjectId for immediate ID access
+        $preGeneratedId = new ObjectId();
+        
+        // Create the object with pre-defined ObjectId for immediate access
+        if ($objParam && $objParam->need_set_uid && isset($mMeta['user_id'])) {
+            $newObj = $this->model::create([
+                'id' => $preGeneratedId,
+                'name' => $new_name, 
+                'parent_id' => $pid, 
+                'user_id' => $objParam->need_set_uid
+            ]);
+        } else {
+            $newObj = $this->model::create([
+                'id' => $preGeneratedId,
+                'name' => $new_name, 
+                'parent_id' => $pid
+            ]);
+        }
+            
+        $ret = (string)$preGeneratedId;
+
+        return rtJsonApiDone($ret, " Create tree done , PID = $pid", 1, $new_name);
         //        return response()->json(['payload' => $ret]);
     }
 
@@ -1385,25 +1404,20 @@ class BaseRepositorySql implements BaseRepositoryInterface
             DB::beginTransaction();
             //api/menu-tree/move?id=4&to_id=0&new_order_node=4,1,3
 
-            $id = $param['id'];
-            $to_id0 = $to_id = $param['to_id'];
+            $id = (string)($param['id']);
+            $to_id0 = $to_id = (string)$param['to_id'];
 
             if($id == $to_id){
                 return rtJsonApiError('Can not move to children (1) ?');
             }
 
-            if ($objMeta->isUseRandId()) {
-                if ($id && ! is_numeric($id)) {
-                    $id = ClassRandId2::getIdFromRand($id);
-                }
-                if ($to_id && ! is_numeric($to_id)) {
-                    $to_id = ClassRandId2::getIdFromRand($to_id);
-                }
-            }
-
             //Todo: cần kiểm tra $to_id có thuộc user hay ko, nếu $to_id > 0
 
-            $obj = $this->model::where('id', $id)->first();
+            $obj = $this->model::find((string)$id);
+
+            if (! $obj) {
+                return rtJsonApiError("Not found item1: $id");
+            }
 
             $changeParent = 1;
             if($obj->parent_id == $to_id){

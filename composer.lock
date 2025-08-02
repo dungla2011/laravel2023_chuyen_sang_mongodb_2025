@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "04a3ac4caa1e7d30cc35367de6a1e1bc",
+    "content-hash": "61638d07596ced0f7c3dadf5902a5551",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -4478,16 +4478,16 @@
         },
         {
             "name": "mongodb/laravel-mongodb",
-            "version": "5.4.1",
+            "version": "5.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mongodb/laravel-mongodb.git",
-                "reference": "d56aefaa2471dd8231bd052e46be366c5d797b07"
+                "reference": "60f48e50aadbd848795cd54fb7fa46c976fcb90f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mongodb/laravel-mongodb/zipball/d56aefaa2471dd8231bd052e46be366c5d797b07",
-                "reference": "d56aefaa2471dd8231bd052e46be366c5d797b07",
+                "url": "https://api.github.com/repos/mongodb/laravel-mongodb/zipball/60f48e50aadbd848795cd54fb7fa46c976fcb90f",
+                "reference": "60f48e50aadbd848795cd54fb7fa46c976fcb90f",
                 "shasum": ""
             },
             "require": {
@@ -4576,9 +4576,9 @@
             "support": {
                 "issues": "https://www.mongodb.com/support",
                 "security": "https://www.mongodb.com/security",
-                "source": "https://github.com/mongodb/laravel-mongodb/tree/5.4.1"
+                "source": "https://github.com/mongodb/laravel-mongodb/tree/5.4.3"
             },
-            "time": "2025-04-22T08:22:29+00:00"
+            "time": "2025-07-30T09:00:19+00:00"
         },
         {
             "name": "mongodb/mongodb",
@@ -11086,96 +11086,6 @@
             "time": "2024-11-24T11:45:37+00:00"
         },
         {
-            "name": "yourcompany/mongo-crud",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "./packages/mongocrud",
-                "reference": "716bfe668eca0ad1efc6022aa6b3ccdee2c8dc5a"
-            },
-            "require": {
-                "laravel/framework": "^11.0|^12.0",
-                "mongodb/laravel-mongodb": "^4.0|^5.0",
-                "php": "^8.2"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "YourCompany\\MongoCrud\\MongoCrudServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "YourCompany\\MongoCrud\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Your Company",
-                    "email": "dev@yourcompany.com"
-                }
-            ],
-            "description": "Simple MongoDB CRUD operations package for Laravel",
-            "transport-options": {
-                "relative": true
-            }
-        },
-        {
-            "name": "yourcompany/service-manager",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "./packages/servicemanager",
-                "reference": "32e5104e235ebcc59b6d769f798047e8d8a6795a"
-            },
-            "require": {
-                "illuminate/database": "^12.0",
-                "illuminate/support": "^12.0",
-                "mongodb/laravel-mongodb": "^5.0",
-                "php": "^8.2"
-            },
-            "require-dev": {
-                "orchestra/testbench": "^9.0",
-                "phpunit/phpunit": "^10.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "YourCompany\\ServiceManager\\ServiceManagerServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "YourCompany\\ServiceManager\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "YourCompany\\ServiceManager\\Tests\\": "tests/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Your Name",
-                    "email": "your.email@example.com"
-                }
-            ],
-            "description": "Laravel package for managing online services with MongoDB",
-            "transport-options": {
-                "relative": true
-            }
-        },
-        {
             "name": "zaloplatform/zalo-php-sdk",
             "version": "4.0.4",
             "source": {
@@ -13940,8 +13850,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "lad-lib/common": 20,
-        "lad-lib/laravel": 20,
-        "yourcompany/mongo-crud": 20
+        "lad-lib/laravel": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

@@ -121,12 +121,15 @@ class MenuTree extends ModelGlxBase
         $mMenu = [];
         foreach ($mMenu0 as $obj) {
             $obj->gid_allow = ",$obj->gid_allow,";
+
+            
             foreach ($mGid as $gidC) {
                 if (! $gidC) {
                     continue;
                 }
                 if (strstr($obj->gid_allow, ",$gidC,") !== false) {
                     $mMenu[] = $obj;
+                    
                     break;
                 }
             }
@@ -135,7 +138,7 @@ class MenuTree extends ModelGlxBase
             //            }
         }
 
-        // print_r($mMenu);
+        
         
         // echo "<br>";
         // die("PID = $pid");
@@ -148,11 +151,14 @@ class MenuTree extends ModelGlxBase
         $haveChild = 0;
         $isInRoot = 0;
         foreach ($mMenu as $obj) {
-            if ($obj->parent_id == $pid) {
+            
+
+
+            if ($obj->parent_id == new \MongoDB\BSON\ObjectId($pid)) {
                 $haveChild = 1;
             }
-            if ($obj->id == $pid) {
-                if ($obj->parent_id == 0) {
+            if ($obj->id == new \MongoDB\BSON\ObjectId($pid)) {
+                if (!$obj->parent_id) {
                     $isInRoot = 1;
                 }
             }
@@ -164,7 +170,9 @@ class MenuTree extends ModelGlxBase
             echo '<ul class="nav nav-treeview nav-sidebar nav-child-indent">';
         }
         foreach ($mMenu as $obj) {
-            if ($obj->parent_id == $pid) {
+            if ($obj->parent_id == new \MongoDB\BSON\ObjectId($pid)) {
+
+                // print_r($obj->toArray());
 
                 $tg = '';
                 if ($obj->open_new_window) {

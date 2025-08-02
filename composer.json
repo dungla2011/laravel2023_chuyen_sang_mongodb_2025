@@ -5,15 +5,7 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "repositories": [
-        { "type": "composer", "url": "https://packagist.org" },
-        {
-            "type": "path",
-            "url": "./packages/servicemanager"
-        },
-        {
-            "type": "path",
-            "url": "./packages/mongocrud"
-        }
+        { "type": "composer", "url": "https://packagist.org" }
     ],
     "require": {
         "php": "^8.2",
@@ -53,8 +45,6 @@
         "thiagoalessio/tesseract_ocr": "^2.12",
         "tymon/jwt-auth": "^2.1",
         "workerman/workerman": "^4.2",
-        "yourcompany/mongo-crud": "dev-main",
-        "yourcompany/service-manager": "*",
         "zaloplatform/zalo-php-sdk": "^4.0"
     },
     "require-dev": {

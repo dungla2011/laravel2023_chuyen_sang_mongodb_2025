@@ -69,7 +69,14 @@
 
                 <li class="nav-item menu-open">
                 <?php
-                \App\Models\MenuTree::showMenuAdminLte(4);
+
+
+
+
+// die();
+
+
+                \App\Models\MenuTree::showMenuAdminLte(new \MongoDB\BSON\ObjectId("688d7d5e397c13fd880fce49"));
 
                 if(0)
                 if(getGidCurrent_() == 1){

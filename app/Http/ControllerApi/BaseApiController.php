@@ -226,9 +226,9 @@ class BaseApiController extends BaseController
         try {
             return $this->data->tree_create($request->all(), $this->objParamEx);
         } catch (\Throwable $exception) { // For PHP 7
-            return rtJsonApiError("tree_create error: " . $exception->getMessage());
+            return rtJsonApiError("tree_create error1: " . $exception->getMessage() . " " . $exception->getFile() . ":" . $exception->getLine());
         } catch (\Exception $exception) {
-            return rtJsonApiError("tree_create error: " . $exception->getMessage());
+            return rtJsonApiError("tree_create error2: " . $exception->getMessage());
         }
     }
 

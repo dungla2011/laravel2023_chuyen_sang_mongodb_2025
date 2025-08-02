@@ -64,7 +64,7 @@
 
             treeFolder1.showTree();
 
-            console.log(" DataGet01 = ", treeFolder1.data);
+            console.log(" DataGet012 = ", treeFolder1.data);
         })
 
     </script>

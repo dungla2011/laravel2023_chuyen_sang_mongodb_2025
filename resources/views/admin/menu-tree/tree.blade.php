@@ -58,13 +58,15 @@ Menu Tree
         treeFolder1.disable_toggle = 0;
 
 
-        if (jctool.getUrlParam('pid') && jctool.getUrlParam('gid'))
+        if (jctool.getUrlParam('pid') && jctool.getUrlParam('gid')){
+            console.log(" showTree123");
             treeFolder1.showTree();
+        }
         else {
             showToastInfoTop("Select to continue...")
         }
 
-        console.log(" DataGet01 = ", treeFolder1.data);
+        console.log(" DataGet011 = ", treeFolder1.data);
 
     </script>
     <script src="/admins/menu_tree.js?v=<?php echo filemtime(base_path("public/admins/menu_tree.js")) ?>"></script>
@@ -100,7 +102,7 @@ Menu Tree
                         <div class="col-sm-2 menu_title"><i class="fa fa-edit"></i> Chọn Menu:</div>
                         <div class="col-sm-10">
                             <?php
-                            $mm = \App\Models\MenuTree::where('parent_id', 0)->orderBy('name', 'asc')->get();
+                            $mm = \App\Models\MenuTree::whereIn('parent_id', [0, null])->orderBy('name', 'asc')->get();
                             foreach ($mm AS $menu) {
                                 $style = '';
                                 //$link = '/admin/menu-tree/tree?open_all=1&pid=' . $menu->id;

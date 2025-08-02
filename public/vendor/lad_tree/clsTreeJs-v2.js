@@ -551,6 +551,8 @@ class clsTreeJsV2 {
 
         console.log(" TreeV2 All2 = " , clsTreeJsV2.all);
 
+        console.log(" this.api_param_ex = ", this.api_param_ex);
+
         //zzz chỗ này cầnfix lại trong trường hợp pid khác 0 là ko lên được
         let pid0 = new URLSearchParams(this.api_param_ex).get('pid');
         console.log("PID0 = ", pid0);
@@ -593,7 +595,7 @@ class clsTreeJsV2 {
 
         var dataIn = null;
 
-        console.log(" DumpThis ", this);
+        console.log(" showTree DumpThis ", this);
 
         this.api_param_ex  = null;
         if(this.api_data.indexOf("|") > 0){
