@@ -1,4 +1,6 @@
 <?php
+
+// echo "xxxx . " . isSupperAdmin_();
 if(!isDebugViewable()){
     return;
 }

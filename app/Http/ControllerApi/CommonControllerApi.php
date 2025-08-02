@@ -158,7 +158,7 @@ class CommonControllerApi extends BaseController
 
         } elseif //Chỉ sadmin mới có quyền xly metadata, nếu ko sẽ dễ bị sai sót vì user khác ko hiểu
         (getUserEmailCurrent_() != env('AUTO_SET_EMAIL_DB_MATRIX_ACCESS')) {
-            return rtJsonApiError('Can not access meta!');
+            return rtJsonApiError('Can not access meta2!');
         }
 
         $all = \request()->all();
@@ -170,7 +170,7 @@ class CommonControllerApi extends BaseController
         if (\request('one-item')) {
             //            $tableNameMetaInfo = $all['table_name'];
             $objMeta = new MetaOfTableInDb();
-            $fid = intval($all['id']);
+            $fid = ($all['_id']);
             $valUpdate = $all['value'];
             $fieldMeta = $all['fieldMeta'];
 

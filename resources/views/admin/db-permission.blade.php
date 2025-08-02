@@ -78,8 +78,8 @@ use Illuminate\Support\Str;
 
                 //
                 $connectionDb = \Illuminate\Support\Facades\DB::getPdo();
-                if (!$connectionDb)
-                    die("NOT CON1");
+                // if (!$connectionDb)
+                //     die("NOT CON1");
 
                 //zzzzzzzz
 //                $mTable = \LadLib\Common\Database\DbHelper::getAllTableName($connectionDb, env("DB_DATABASE"));
@@ -158,6 +158,7 @@ use Illuminate\Support\Str;
 
                 /////////////////////
                 $objMetaCommon = new MetaTableCommon();
+                // dump($objMetaCommon);
                 $mmFieldOfTable = [];
                 if (!$tableModelSelecting)
                     goto _NEXT;
@@ -166,6 +167,9 @@ use Illuminate\Support\Str;
                 //$mmFieldOfTable = \LadLib\Common\Database\DbHelper::getTableColumns($connectionDb, $tableModelSelecting);
 
                 $mmFieldOfTable = \LadLib\Laravel\Database\DbHelperLaravel::getTableColumns(null, $tableModelSelecting);
+
+
+                // dump($mmFieldOfTable);
 
                     //Lấy tên bảng meta, để truyền vào API update Meta bên dưới
 //                $tableNameMetaInfo = $tableModelSelecting . "_meta_info";
@@ -182,6 +186,7 @@ use Illuminate\Support\Str;
                 $objMetaOfTable->setDbInfoGetMeta($tableModelSelecting, $connectionDb);
                 $mmAllMetaDb = $objMetaOfTable->getMetaDataApi();
 
+                // dump($mmAllMetaDb);
                 ?>
                 <form action="" id="form_post_data" method="post">
                     <div class="divContainer" id="div_container_meta"

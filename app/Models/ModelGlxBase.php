@@ -18,6 +18,11 @@ class ModelGlxBase extends Model
     
     protected $connection = 'mongodb';
     protected $afterSaveCalled = false;
+    
+    // MongoDB configuration
+    protected $primaryKey = '_id'; // Explicitly set primary key
+    public $incrementing = false; // MongoDB doesn't auto-increment
+    protected $keyType = 'mixed'; // Allow various key types, nhờ có cái này mà ->_id hoặc ->id đều được
 
     static $is_has_field_id__ = null;
 

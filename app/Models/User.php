@@ -199,11 +199,18 @@ class User extends UserGlx
 
         //Neu token dang tk1_
         if(str_starts_with($tk1, 'TK1_')){
+            // echo " 309840923 ";
             $tk1 = substr($tk1, 4);
             $payloadTk = JWT::decode($tk1, new Key(env('APP_KEY'), 'HS256'));
 //            $payloadTk = JWT::decode($tk1, env('APP_KEY'), 'HS256');
             $userid = $payloadTk->user_id ?? null;
+
+            // echo " UID = $userid ";
+
             $user = User::find($userid);
+
+            // dump($user->toArray());
+
             return $user;
         }
 
@@ -587,9 +594,13 @@ class User extends UserGlx
     public static function isSupperAdmin()
     {
         $user = User::getUserByTokenAccess($_COOKIE['_tglx__863516839'] ?? '');
+
+        
         if ($user && $user->is_admin) {
-            return $user->id;
+            return $user->getId();
         }
+
+
         return null;
     }
 
