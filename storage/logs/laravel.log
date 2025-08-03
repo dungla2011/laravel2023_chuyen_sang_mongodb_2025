@@ -147,3 +147,5 @@
 [2025-08-02 18:26:43] development.DEBUG: View: admin.index  
 [2025-08-03 13:38:30] development.DEBUG: View: admin.index  
 [2025-08-03 13:38:36] development.DEBUG: View: admin.index  
+[2025-08-03 14:04:53] development.DEBUG: View: index.sandbox.public  
+[2025-08-03 14:06:29] development.DEBUG: View: login.login  

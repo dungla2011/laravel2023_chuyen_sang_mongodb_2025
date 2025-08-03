@@ -177,12 +177,15 @@ class User extends UserGlx
     {
         //Token được gửi từ Header
         //Lấy Token từ DB, sau đó tìm ra userid,
-
+        $tk1 = '';
+        
         if ($tk) {
             $tk1 = $tk;
         }
-        else
-            $tk1 = trim(request()->bearerToken());
+        else{
+            if(request()->bearerToken())
+                $tk1 = trim(request()->bearerToken());
+        }
 
         if(!$tk1){
             //Cho cac phien ban cu:

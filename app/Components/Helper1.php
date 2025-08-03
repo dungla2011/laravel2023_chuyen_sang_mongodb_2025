@@ -74,7 +74,7 @@ class Helper1
      */
     public static function isMemberModuleApi(Request $rq)
     {
-        if (str_starts_with($rq?->route()?->uri(), 'api/member')) {
+        if (@str_starts_with($rq?->route()?->uri(), 'api/member')) {
             return 1;
         }
 
@@ -90,10 +90,10 @@ class Helper1
         if (! $rq) {
             $rq = \request();
         }
-        if (str_starts_with($rq?->route()?->uri(), 'member')) {
+        if ($rq?->route()?->uri() && str_starts_with($rq?->route()?->uri(), 'member')) {
             return 1;
         }
-        if (str_starts_with($rq?->route()?->uri(), 'api/member')) {
+        if ($rq?->route()?->uri() && str_starts_with($rq?->route()?->uri(), 'api/member')) {
             return 1;
         }
 

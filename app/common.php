@@ -27,6 +27,69 @@ defined('_MB') || define('_MB', 1048576);
 defined('_GB') || define('_GB', 1073741824);
 defined('_NSECOND_DAY') || define('_NSECOND_DAY', 86400);
 
+class ladDebug
+{
+    public static $enable = 1;
+
+    public static $strTime = [];
+
+    public static $startTime1;
+
+    public static $startTime2;
+
+    public static function addTime($file, $line, $count = 0)
+    {
+        if (! static::$enable) {
+            return null;
+        }
+        $file = basename($file);
+        static::$strTime["$file($line)$count"] = microtime(1);
+    }
+
+    public static function dumpDebugTime()
+    {
+        //return;
+        if (! static::$enable) {
+            return null;
+        }
+
+        $ret = static::toStringTime();
+//        dumpdebug(' TimeDebug: - '.$ret." \nREQUEST: ".serialize($_REQUEST), '/var/glx/weblog/timer_access.log');
+
+        return $ret;
+    }
+
+    public static function toStringTime()
+    {
+        //return null;
+        $dtime = 0;
+        $tmp = '';
+        if (count(static::$strTime)) {
+            $cc = 0;
+            $t0 = 0;
+            $x = 0;
+            $dt1 = 0;
+            foreach (static::$strTime as $key => $value) {
+                $tmp .= "\n|$key->$value";
+                if ($cc == 0) {
+                    $t0 = $value;
+                } else {
+                    $dt1 = number_format($value - $x, 2);
+                }
+                $cc++;
+
+                $tmp .= "(DT = $dt1) ";
+
+                $x = $value;
+            }
+            $dtime = number_format($x - $t0, 2);
+        }
+
+        return " $tmp \n DTIME = $dtime";
+    }
+}
+
+
 //Bad request:
 function loiApi400($str, $code = -1)
 {
