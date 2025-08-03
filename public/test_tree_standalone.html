@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Tree Standalone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .api-url {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+            word-break: break-all;
+            margin-bottom: 15px;
+        }
+        
+        .controls {
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        
+        .btn:hover {
+            background: #0056b3;
+        }
+        
+        .btn-success {
+            background: #28a745;
+        }
+        
+        .btn-success:hover {
+            background: #1e7e34;
+        }
+        
+        .loading {
+            color: #6c757d;
+            font-style: italic;
+        }
+        
+        .error {
+            color: #dc3545;
+            background: #f8d7da;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        
+        .stats {
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        
+        /* Tree Styles */
+        .tree-container {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        
+        .tree-node {
+            margin: 2px 0;
+            padding: 4px 8px;
+            border-radius: 3px;
+            transition: background-color 0.2s;
+        }
+        
+        .tree-node:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .tree-node.root {
+            background-color: #e3f2fd;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .node-content {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .toggle-icon {
+            cursor: pointer;
+            width: 16px;
+            text-align: center;
+            font-family: monospace;
+            color: #6c757d;
+        }
+        
+        .toggle-icon:hover {
+            color: #007bff;
+        }
+        
+        .node-name {
+            flex: 1;
+            color: #333;
+        }
+        
+        .node-info {
+            font-size: 11px;
+            color: #6c757d;
+            margin-left: auto;
+        }
+        
+        .node-link {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 11px;
+            margin-left: 5px;
+        }
+        
+        .node-link:hover {
+            text-decoration: underline;
+        }
+        
+        .children {
+            margin-left: 20px;
+            border-left: 1px dotted #ddd;
+            padding-left: 10px;
+        }
+        
+        .children.collapsed {
+            display: none;
+        }
+        
+        .no-children {
+            color: #999;
+            font-size: 11px;
+            margin-left: 20px;
+        }
+        
+        /* Level colors */
+        .level-0 { border-left: 3px solid #007bff; }
+        .level-1 { background-color: #f8f9fa; }
+        .level-2 { background-color: #e9ecef; }
+        .level-3 { background-color: #dee2e6; }
+        
+        .json-output {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 400px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌳 Menu Tree Viewer</h1>
+            <p>Standalone HTML page to display tree structure from API</p>
+        </div>
+        
+        <div class="api-url">
+            <strong>API URL:</strong> http://127.0.0.1:8000/api/menu-tree/list?pid=688e0ba903deadd6df0f43e1&get_all=1&null&order_by=orders
+        </div>
+        
+        <div class="controls">
+            <button class="btn" onclick="loadTreeData()">🔄 Load Tree Data</button>
+            <button class="btn btn-success" onclick="expandAll()">📖 Expand All</button>
+            <button class="btn" onclick="collapseAll()">📕 Collapse All</button>
+            <button class="btn" onclick="toggleJsonView()">🔍 Toggle JSON</button>
+            <button class="btn" onclick="showDebugInfo()">🐛 Debug Info</button>
+        </div>
+        
+        <div id="stats" class="stats" style="display: none;">
+            <strong>Statistics:</strong> <span id="stats-content"></span>
+        </div>
+        
+        <div id="error-container"></div>
+        
+        <div id="loading" class="loading" style="display: none;">
+            ⏳ Loading tree data...
+        </div>
+        
+        <div id="tree-container" class="tree-container">
+            <div class="no-children">Click "Load Tree Data" to fetch and display the menu tree</div>
+        </div>
+        
+        <div id="json-container" class="json-output" style="display: none;">
+            <div id="json-output"></div>
+        </div>
+    </div>
+
+    <script>
+        let treeData = [];
+        let isJsonVisible = false;
+        
+        // API configuration
+        const API_URL = 'http://127.0.0.1:8000/api/menu-tree/list?pid=688e0ba903deadd6df0f43e1&get_all=1&null&order_by=orders';
+        
+        // Mock data for testing (in case API is not available)
+        const MOCK_DATA = {
+            "code": 1,
+            "payload": [
+                // Root nodes
+                {
+                    "id": "688e0c626acb7551f104fdb5",
+                    "name": "Admin Menu",
+                    "created_at": "2022-10-30T04:30:24.000000Z",
+                    "link": "",
+                    "gid_allow": "1",
+                    "parent_id": null,
+                    "has_child": 1,
+                    "_public_link": null
+                },
+                {
+                    "id": "688e0c626acb7551f104fdb6",
+                    "name": "Public Menu", 
+                    "created_at": "2022-10-30T02:28:02.000000Z",
+                    "link": "",
+                    "gid_allow": "0",
+                    "parent_id": null,
+                    "has_child": 1,
+                    "_public_link": null
+                },
+                {
+                    "id": "688e0c626acb7551f104fdb7",
+                    "name": "Member Menu",
+                    "created_at": "2022-10-30T02:15:05.000000Z", 
+                    "link": "",
+                    "gid_allow": "2",
+                    "parent_id": null,
+                    "has_child": 1,
+                    "_public_link": null
+                },
+                
+                // Children of Admin Menu
+                {
+                    "id": "688e0c626acb7551f104fd51",
+                    "name": "Tools",
+                    "created_at": "2022-10-31T01:40:32.000000Z",
+                    "link": "",
+                    "gid_allow": "1",
+                    "parent_id": "688e0c626acb7551f104fdb5",
+                    "has_child": 1,
+                    "_public_link": null
+                },
+                {
+                    "id": "688e0c626acb7551f104fed4",
+                    "name": "Money Management",
+                    "created_at": "2022-12-13T02:37:06.000000Z",
+                    "link": "/admin/money-log",
+                    "gid_allow": "1",
+                    "parent_id": "688e0c626acb7551f104fdb5",
+                    "has_child": 0,
+                    "_public_link": null
+                },
+                
+                // Children of Tools
+                {
+                    "id": "688e0c626acb7551f104fe74",
+                    "name": "Máy tính",
+                    "created_at": "2022-10-30T21:09:12.000000Z",
+                    "link": "",
+                    "gid_allow": "3,0",
+                    "parent_id": "688e0c626acb7551f104fd51",
+                    "has_child": 0,
+                    "_public_link": null
+                },
+                {
+                    "id": "688e0c626acb7551f104fe75",
+                    "name": "Demo Table",
+                    "created_at": "2022-10-30T11:39:16.000000Z",
+                    "link": "/admin/demo-table",
+                    "gid_allow": "1",
+                    "parent_id": "688e0c626acb7551f104fd51",
+                    "has_child": 0,
+                    "_public_link": null
+                },
+                
+                // Children of Public Menu
+                {
+                    "id": "688e0c626acb7551f104fe80",
+                    "name": "Tài khoản",
+                    "created_at": "2022-10-31T04:05:39.000000Z",
+                    "link": "/account",
+                    "gid_allow": "0",
+                    "parent_id": "688e0c626acb7551f104fdb6",
+                    "has_child": 0,
+                    "_public_link": null
+                },
+                {
+                    "id": "688e0c626acb7551f104fe81",
+                    "name": "Liên hệ",
+                    "created_at": "2022-10-31T04:05:56.000000Z",
+                    "link": "/contact",
+                    "gid_allow": "0",
+                    "parent_id": "688e0c626acb7551f104fdb6",
+                    "has_child": 0,
+                    "_public_link": null
+                }
+            ]
+        };
+        
+        function showError(message) {
+            const errorContainer = document.getElementById('error-container');
+            errorContainer.innerHTML = `<div class="error">❌ ${message}</div>`;
+        }
+        
+        function hideError() {
+            document.getElementById('error-container').innerHTML = '';
+        }
+        
+        function showLoading() {
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('tree-container').style.display = 'none';
+        }
+        
+        function hideLoading() {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('tree-container').style.display = 'block';
+        }
+        
+        function updateStats(data) {
+            const total = data.length;
+            const withChildren = data.filter(item => item.has_child > 0).length;
+            const withLinks = data.filter(item => item.link && item.link.trim() !== '').length;
+            
+            // Count actual roots (only parent_id = null should be root)
+            const itemIds = new Set(data.map(item => item.id));
+            const roots = data.filter(item => {
+                // Only null parent_id is truly root
+                return item.parent_id === null;
+            });
+            const rootCount = roots.length;
+            
+            // Count orphans (have parent_id but parent not in dataset)
+            const orphans = data.filter(item => {
+                return item.parent_id !== null && !itemIds.has(item.parent_id);
+            });
+            const orphanCount = orphans.length;
+            
+            // Show root details
+            const rootNames = roots.map(item => item.name).join(', ');
+            
+            document.getElementById('stats-content').innerHTML = 
+                `<strong>Total:</strong> ${total} | 
+                 <strong>Root Nodes:</strong> ${rootCount} (${rootNames}) | 
+                 <strong>Orphans:</strong> ${orphanCount} | 
+                 <strong>With Children:</strong> ${withChildren} | 
+                 <strong>With Links:</strong> ${withLinks}`;
+            document.getElementById('stats').style.display = 'block';
+            
+            console.log('Root nodes found:', roots);
+        }
+        
+        async function loadTreeData() {
+            showLoading();
+            hideError();
+            
+            try {
+                console.log('Fetching data from:', API_URL);
+                
+                // Try to fetch from API first
+                const response = await fetch(API_URL);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                
+                if (data.code !== 1 || !data.payload) {
+                    throw new Error('Invalid API response format');
+                }
+                
+                treeData = data.payload;
+                updateStats(treeData);
+                renderTree();
+                
+            } catch (error) {
+                console.error('API Error:', error);
+                showError(`Failed to load from API: ${error.message}. Using mock data instead.`);
+                
+                // Fallback to mock data
+                treeData = MOCK_DATA.payload;
+                updateStats(treeData);
+                renderTree();
+            }
+            
+            hideLoading();
+        }
+        
+        function buildTreeStructure(data) {
+            console.log('Raw data:', data);
+            
+            // Create a map for quick lookup
+            const itemMap = new Map();
+            const tree = [];
+            
+            // First pass: create map
+            data.forEach(item => {
+                itemMap.set(item.id, {
+                    ...item,
+                    children: []
+                });
+            });
+            
+            console.log('Item map created:', itemMap);
+            
+            // Find root nodes and build relationships
+            data.forEach(item => {
+                const currentItem = itemMap.get(item.id);
+                
+                // Check if item has valid parent_id that exists in current dataset
+                const hasValidParent = item.parent_id !== null && itemMap.has(item.parent_id);
+                
+                if (hasValidParent) {
+                    // Has parent and parent exists in data - add as child
+                    itemMap.get(item.parent_id).children.push(currentItem);
+                    console.log(`Added ${item.name} as child of ${itemMap.get(item.parent_id).name}`);
+                } else {
+                    // parent_id is null OR parent not in current dataset - treat as root
+                    tree.push(currentItem);
+                    const reason = item.parent_id === null ? 'NULL parent' : `parent '${item.parent_id}' not found`;
+                    console.log(`Added ${item.name} as root node (reason: ${reason})`);
+                }
+            });
+            
+            console.log('Final tree structure:', tree);
+            console.log(`Found ${tree.length} root nodes`);
+            
+            return tree;
+        }
+        
+        function renderTree() {
+            const container = document.getElementById('tree-container');
+            const tree = buildTreeStructure(treeData);
+            
+            if (tree.length === 0) {
+                container.innerHTML = '<div class="no-children">No tree data available</div>';
+                return;
+            }
+            
+            container.innerHTML = tree.map(node => renderNode(node, 0)).join('');
+            
+            // Update JSON view if visible
+            if (isJsonVisible) {
+                document.getElementById('json-output').textContent = JSON.stringify(treeData, null, 2);
+            }
+        }
+        
+        function renderNode(node, level = 0) {
+            const hasChildren = node.children && node.children.length > 0;
+            const toggleIcon = hasChildren ? '▶' : '•';
+            const nodeId = `node-${node.id}`;
+            const childrenId = `children-${node.id}`;
+            
+            let html = `
+                <div class="tree-node level-${level} ${level === 0 ? 'root' : ''}" id="${nodeId}">
+                    <div class="node-content">
+                        <span class="toggle-icon" onclick="toggleNode('${childrenId}', this)" 
+                              style="${!hasChildren ? 'visibility: hidden;' : ''}">
+                            ${toggleIcon}
+                        </span>
+                        <span class="node-name">${escapeHtml(node.name)}</span>
+                        <span class="node-info">
+                            ID: ${node.id.substring(0, 8)}...
+                            ${node.gid_allow ? `| GID: ${node.gid_allow}` : ''}
+                            ${node.has_child ? `| Children: ${node.has_child}` : ''}
+                        </span>
+                        ${node.link && node.link.trim() ? 
+                            `<a href="${node.link}" class="node-link" target="_blank">🔗 Link</a>` : ''}
+                    </div>
+                </div>
+            `;
+            
+            if (hasChildren) {
+                html += `
+                    <div class="children collapsed" id="${childrenId}">
+                        ${node.children.map(child => renderNode(child, level + 1)).join('')}
+                    </div>
+                `;
+            }
+            
+            return html;
+        }
+        
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        function toggleNode(childrenId, toggleElement) {
+            const children = document.getElementById(childrenId);
+            if (!children) return;
+            
+            const isCollapsed = children.classList.contains('collapsed');
+            
+            if (isCollapsed) {
+                children.classList.remove('collapsed');
+                toggleElement.textContent = '▼';
+            } else {
+                children.classList.add('collapsed');
+                toggleElement.textContent = '▶';
+            }
+        }
+        
+        function expandAll() {
+            document.querySelectorAll('.children').forEach(children => {
+                children.classList.remove('collapsed');
+            });
+            
+            document.querySelectorAll('.toggle-icon').forEach(toggle => {
+                if (toggle.textContent === '▶') {
+                    toggle.textContent = '▼';
+                }
+            });
+        }
+        
+        function collapseAll() {
+            document.querySelectorAll('.children').forEach(children => {
+                children.classList.add('collapsed');
+            });
+            
+            document.querySelectorAll('.toggle-icon').forEach(toggle => {
+                if (toggle.textContent === '▼') {
+                    toggle.textContent = '▶';
+                }
+            });
+        }
+        
+        function toggleJsonView() {
+            const treeContainer = document.getElementById('tree-container');
+            const jsonContainer = document.getElementById('json-container');
+            
+            isJsonVisible = !isJsonVisible;
+            
+            if (isJsonVisible) {
+                treeContainer.style.display = 'none';
+                jsonContainer.style.display = 'block';
+                document.getElementById('json-output').textContent = JSON.stringify(treeData, null, 2);
+            } else {
+                treeContainer.style.display = 'block';
+                jsonContainer.style.display = 'none';
+            }
+        }
+        
+        function showDebugInfo() {
+            if (treeData.length === 0) {
+                alert('No data loaded yet. Please load tree data first.');
+                return;
+            }
+            
+            // Check first 10 items to see their parent_id values
+            let debugInfo = `=== TREE DEBUG INFO ===\n\n`;
+            debugInfo += `Total items: ${treeData.length}\n\n`;
+            
+            debugInfo += `FIRST 10 ITEMS PARENT_ID ANALYSIS:\n`;
+            for (let i = 0; i < Math.min(10, treeData.length); i++) {
+                const item = treeData[i];
+                debugInfo += `- ${item.name}:\n`;
+                debugInfo += `  parent_id = "${item.parent_id}" (type: ${typeof item.parent_id})\n`;
+                debugInfo += `  parent_id === "" ? ${item.parent_id === ""}\n`;
+                debugInfo += `  parent_id === null ? ${item.parent_id === null}\n`;
+                debugInfo += `  !parent_id ? ${!item.parent_id}\n\n`;
+            }
+            
+            const itemIds = new Set(treeData.map(item => item.id));
+            const rootItems = treeData.filter(item => item.parent_id === null);
+            const orphanItems = treeData.filter(item => {
+                return item.parent_id !== null && !itemIds.has(item.parent_id);
+            });
+            const validChildItems = treeData.filter(item => {
+                return item.parent_id !== null && itemIds.has(item.parent_id);
+            });
+            
+            debugInfo += `Root items: ${rootItems.length}\n`;
+            debugInfo += `Valid children: ${validChildItems.length}\n`;
+            debugInfo += `Orphan items: ${orphanItems.length}\n\n`;
+            
+            debugInfo += `ROOT ITEMS (parent_id = null):\n`;
+            rootItems.forEach(item => {
+                debugInfo += `- ${item.name} (ID: ${item.id.substring(0,8)}...)\n`;
+            });
+            
+            debugInfo += `\nVALID CHILDREN (first 5):\n`;
+            validChildItems.slice(0, 5).forEach(item => {
+                debugInfo += `- ${item.name} -> parent: ${item.parent_id.substring(0,8)}...\n`;
+            });
+            
+            if (orphanItems.length > 0) {
+                debugInfo += `\nORPHAN ITEMS (parent not in dataset, first 5):\n`;
+                orphanItems.slice(0, 5).forEach(item => {
+                    debugInfo += `- ${item.name} -> missing parent: ${item.parent_id.substring(0,8)}...\n`;
+                });
+            }
+            
+            debugInfo += `\nPARENT-CHILD RELATIONSHIPS (first 5):\n`;
+            let relationshipCount = 0;
+            for (const item of treeData) {
+                const children = treeData.filter(child => child.parent_id === item.id);
+                if (children.length > 0) {
+                    debugInfo += `- ${item.name} has ${children.length} children: ${children.map(c => c.name).join(', ')}\n`;
+                    relationshipCount++;
+                    if (relationshipCount >= 5) break;
+                }
+            }
+            
+            alert(debugInfo);
+        }
+        
+        // Auto-load on page load
+        window.addEventListener('load', () => {
+            console.log('Page loaded, auto-loading tree data...');
+            loadTreeData();
+        });
+        
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey) {
+                switch(e.key) {
+                    case 'r':
+                        e.preventDefault();
+                        loadTreeData();
+                        break;
+                    case 'e':
+                        e.preventDefault();
+                        expandAll();
+                        break;
+                    case 'c':
+                        e.preventDefault();
+                        collapseAll();
+                        break;
+                    case 'j':
+                        e.preventDefault();
+                        toggleJsonView();
+                        break;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

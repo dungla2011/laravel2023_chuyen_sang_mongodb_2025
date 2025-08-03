@@ -70,13 +70,14 @@
                 <li class="nav-item menu-open">
                 <?php
 
+                $adminMenu = \App\Models\MenuTree::where('name', 'regex', new \MongoDB\BSON\Regex('^Admin', 'i'))->first();
+                if ($adminMenu) {
+                    $adminMenuId = $adminMenu->_id;
+                    \App\Models\MenuTree::showMenuAdminLte(new \MongoDB\BSON\ObjectId($adminMenuId));
+                    echo "<!-- Admin Menu ID: " . $adminMenuId . " -->";
+                }
 
 
-
-// die();
-
-
-                \App\Models\MenuTree::showMenuAdminLte(new \MongoDB\BSON\ObjectId("688d7d5e397c13fd880fce49"));
 
                 if(0)
                 if(getGidCurrent_() == 1){

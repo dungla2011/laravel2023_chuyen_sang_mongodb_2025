@@ -167,7 +167,7 @@ class MenuTree extends ModelGlxBase
             return;
         }
         if (! $isInRoot) {
-            echo '<ul class="nav nav-treeview nav-sidebar nav-child-indent">';
+            echo '<ul class="nav nav-treeview ppp787687834 nav-sidebar nav-child-indent">';
         }
         foreach ($mMenu as $obj) {
             if ($obj->parent_id == new \MongoDB\BSON\ObjectId($pid)) {
@@ -182,7 +182,7 @@ class MenuTree extends ModelGlxBase
                     $obj->icon = 'far fa-circle nav-icon';
                 }
 
-                echo "<li id='_menu_$obj->link' class='nav-item'><a $tg href='$obj->link' class='text-sm nav-link'><i class='$obj->icon'></i><p>".($obj->name);
+                echo "<li data-idx='$obj->id' id='_menu_$obj->link' class='nav-item'><a $tg href='$obj->link' class='text-sm nav-link'><i class='$obj->icon'></i><p>".($obj->name);
                 if ($obj->isHaveChild($mMenu)) {
                     echo "<i class='right fas fa-angle-left'></i>";
                 }

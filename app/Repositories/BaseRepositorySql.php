@@ -1291,11 +1291,15 @@ class BaseRepositorySql implements BaseRepositoryInterface
                 $objParam->setUidIfMust();
             }
 
-            if ($objParam->module == 'member' && $objParam->need_set_uid <= 0) {
+            if ($objParam->module == 'member' && $objParam->need_set_uid <= 0) { 
 //                return rtJsonApiError('Must set userid when access member api');
             }
 
+            try{
             $rt = $this->model->queryIndexTree($param, $objParam);
+            }catch (\Throwable $e){
+                die('ERROR: '.$e->getMessage()."\n\n".$e->getTraceAsString());
+            }
 
             if (is_array($rt)) {
                 return rtJsonApiDone($rt[0], 'DONE Tree2!', 1, $rt[1]);

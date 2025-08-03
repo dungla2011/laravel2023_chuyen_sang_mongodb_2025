@@ -499,6 +499,13 @@ function isAdminMngGroup()
     return 0;
 }
 
+
+function fx_print_array($mm){
+    echo "<pre> Total = ". count($mm) . " ; ";
+    print_r($mm);
+    echo "</pre>";
+}
+
 function getUserIdCurrentInCookie($getUser = 0) {
 
 
@@ -7062,4 +7069,18 @@ function removeCommentsWithDOM2($html) {
     }
 
     return $processedHtml;
+}
+
+
+function fx_to_mongo_object_id($idOrStr){
+    if(is_numeric($idOrStr) || (is_string($idOrStr) && ctype_digit($idOrStr))){
+        return new \MongoDB\BSON\ObjectId($idOrStr);
+    }
+    
+    // If it's a 24-character hex string (ObjectId format), convert to ObjectId
+    if(is_string($idOrStr) && strlen($idOrStr) === 24 && ctype_xdigit($idOrStr)){
+        return new \MongoDB\BSON\ObjectId($idOrStr);
+    }
+    
+    return $idOrStr;
 }

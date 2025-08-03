@@ -511,7 +511,7 @@ class clsTreeJsV2 {
         var strAll = '';
         let foundPid = 0;
         for (let elm1 of dataIn) {
-            // console.log("ELM " , elm1);
+            // console.log("ELM " , elm1 , pid);
             if (elm1.parent_id == pid) {
                 foundPid = 1;
                 // var otherNodeNested = ''
@@ -563,6 +563,8 @@ class clsTreeJsV2 {
         console.log("PID10 / this.root_id = ", pid0, this.root_id);
 
         var str_tree = this.getStrTreeNode(this.root_id, dataIn);
+
+        console.log(" str_tree = ", str_tree);
 
         let rootNode = {'id': this.root_id, 'parent_id': 0, 'name': 'ROOT', 'has_child': 1}
 
