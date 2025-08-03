@@ -178,7 +178,7 @@ class User extends UserGlx
         //Token được gửi từ Header
         //Lấy Token từ DB, sau đó tìm ra userid,
         $tk1 = '';
-        
+
         if ($tk) {
             $tk1 = $tk;
         }
@@ -282,6 +282,10 @@ class User extends UserGlx
      */
     public static function checkPermissionRouteName($routeName)
     {
+        // Bypass authentication if DISABLE_AUTH_MIDDLEWARE is set to true
+        if (env('DISABLE_AUTH_MIDDLEWARE', false)) {
+            return true;
+        }
 
         //        dump(auth()->user()->email);
         //Nếu là API
